@@ -1,0 +1,404 @@
+.
+├── fig_power_supply_connection.txt
+├── LICENCE
+├── README.md
+└── src
+    ├── CMakeLists.txt -> /opt/ros/kinetic/share/catkin/cmake/toplevel.cmake
+    ├── fifth_robot_pkgs
+    │   ├── fifth_robot_2dnav
+    │   │   ├── CMakeLists.txt
+    │   │   ├── config
+    │   │   │   ├── amcl_params.yaml
+    │   │   │   ├── costmap
+    │   │   │   │   ├── costmap_common_params.yaml
+    │   │   │   │   ├── global_costmap_params.yaml
+    │   │   │   │   └── local_costmap_params.yaml
+    │   │   │   ├── mcl_3dl_params.yaml
+    │   │   │   ├── move_base_params.yaml
+    │   │   │   └── planner
+    │   │   │       ├── base_global_planner_params.yaml
+    │   │   │       ├── base_local_planner_params.yaml
+    │   │   │       └── recovery_behaviors.yaml
+    │   │   ├── launch
+    │   │   │   ├── amcl_diff.launch
+    │   │   │   ├── hector_localization.launch
+    │   │   │   ├── mcl_3dl.launch
+    │   │   │   └── move_base.launch
+    │   │   └── package.xml
+    │   ├── fifth_robot_description
+    │   │   ├── CMakeLists.txt
+    │   │   ├── config
+    │   │   │   ├── cartographer
+    │   │   │   │   ├── assets_writer.lua
+    │   │   │   │   ├── fifth_robot_gazebo_3d.lua
+    │   │   │   │   ├── map_builder.lua
+    │   │   │   │   ├── sparse_pose_graph.lua
+    │   │   │   │   ├── trajectory_builder_2d.lua
+    │   │   │   │   ├── trajectory_builder_3d.lua
+    │   │   │   │   └── trajectory_builder.lua
+    │   │   │   ├── controller
+    │   │   │   │   ├── controller.yaml
+    │   │   │   │   └── fifth_robot.urdf
+    │   │   │   └── navigation
+    │   │   │       └── costmap_common_params.yaml
+    │   │   ├── install_simulator.sh
+    │   │   ├── launch
+    │   │   │   ├── cartographer
+    │   │   │   │   ├── assets_writer.launch
+    │   │   │   │   └── offline_cartographer.launch
+    │   │   │   ├── gazebo
+    │   │   │   │   ├── empty_world.launch
+    │   │   │   │   ├── fifth_robot_control.launch
+    │   │   │   │   ├── setup_gazebo.launch
+    │   │   │   │   ├── teleop_keyboard.launch
+    │   │   │   │   └── willowgarage_world.launch
+    │   │   │   ├── navigation
+    │   │   │   │   ├── generate_waypoint.launch
+    │   │   │   │   ├── gmapping.launch
+    │   │   │   │   ├── move_base_gazebo.launch
+    │   │   │   │   ├── navigation.launch
+    │   │   │   │   └── planning_test.launch
+    │   │   │   └── rosbag
+    │   │   │       ├── bag_filter_2d.launch
+    │   │   │       ├── bag_filter_3d.launch
+    │   │   │       └── pointcloud_to_laserscan.launch
+    │   │   ├── map
+    │   │   │   ├── 3d_map.pcd
+    │   │   │   ├── sample_map.pgm
+    │   │   │   ├── sample_map.yaml
+    │   │   │   └── sample_waypoint.csv
+    │   │   ├── package.xml
+    │   │   ├── README.md
+    │   │   ├── rviz
+    │   │   │   ├── gazebo_3d.rviz
+    │   │   │   ├── gazebo_3d_with_amcl.rviz
+    │   │   │   └── gazebo_3d_with_mcl_3dl.rviz
+    │   │   └── world
+    │   │       └── clearpath_playpen.world
+    │   ├── fifth_robot_launcher
+    │   │   ├── CMakeLists.txt
+    │   │   ├── config
+    │   │   │   └── razor_imu_9dof.yaml
+    │   │   ├── launch
+    │   │   │   ├── cartographer
+    │   │   │   │   ├── assets_writer.launch
+    │   │   │   │   └── offline_cartographer.launch
+    │   │   │   ├── generator
+    │   │   │   │   ├── generate_2dmap.launch
+    │   │   │   │   ├── generate_3dmap.launch
+    │   │   │   │   ├── generate_waypoint.launch
+    │   │   │   │   └── hector_mapping.launch
+    │   │   │   ├── navigation
+    │   │   │   │   ├── map_tf_test.launch
+    │   │   │   │   ├── navigation.launch
+    │   │   │   │   └── planner_test.launch
+    │   │   │   ├── setup
+    │   │   │   │   ├── robot
+    │   │   │   │   │   └── ypspur.launch
+    │   │   │   │   ├── sensor
+    │   │   │   │   │   ├── front_urg.launch
+    │   │   │   │   │   ├── razor_imu_9dof.launch
+    │   │   │   │   │   ├── rt_usb_9axisimu_driver.launch
+    │   │   │   │   │   ├── tf_for_sensors.launch
+    │   │   │   │   │   └── velodyne.launch
+    │   │   │   │   ├── setup_all.launch
+    │   │   │   │   └── teleop.launch
+    │   │   │   └── topics
+    │   │   │       ├── bag_filter_2d.launch
+    │   │   │       ├── bag_filter_3d.launch
+    │   │   │       ├── bag_recorder.launch
+    │   │   │       ├── pointcloud_to_laserscan.launch
+    │   │   │       └── pointcloud_to_pcd.launch
+    │   │   ├── package.xml
+    │   │   ├── rviz
+    │   │   │   ├── gazebo.rviz
+    │   │   │   ├── tanaco.rviz
+    │   │   │   ├── waypoint_generating.rviz
+    │   │   │   ├── with_amcl.rviz
+    │   │   │   ├── with_mcl_3dl.rviz
+    │   │   │   └── yamabico.rviz
+    │   │   ├── shell
+    │   │   │   ├── openEth.sh
+    │   │   │   ├── openUSB.sh
+    │   │   │   └── test_UTM_30_LX_EW.sh
+    │   │   └── ypspur_params
+    │   │       ├── fifth_robot_old.param
+    │   │       └── fifth_robot.param
+    │   ├── fifth_robot_map
+    │   │   ├── 2dmap
+    │   │   │   ├── factory.pgm
+    │   │   │   └── factory.yaml
+    │   │   ├── 3dmap
+    │   │   │   └── factory.pcd
+    │   │   ├── CMakeLists.txt
+    │   │   └── package.xml
+    │   └── fifth_robot_pkgs
+    │       ├── CMakeLists.txt
+    │       └── package.xml
+    ├── goal_sender
+    │   ├── CMakeLists.txt
+    │   ├── package.xml
+    │   ├── src
+    │   │   ├── csv_goal_sender_node.cpp
+    │   │   └── goal_sender_node.cpp
+    │   └── waypoint
+    │       ├── 2016-11-05-15-10-06.csv
+    │       ├── 2016-11-06-00-45-38.csv
+    │       ├── default.csv
+    │       ├── park.csv
+    │       ├── waypoint_front.csv
+    │       └── waypoint_multi.csv
+    ├── goal_sender_msgs
+    │   ├── CMakeLists.txt
+    │   ├── msg
+    │   │   ├── GoalSequence.msg
+    │   │   └── Waypoint.msg
+    │   ├── package.xml
+    │   └── srv
+    │       └── ApplyGoals.srv
+    ├── ros_imu_filter
+    │   ├── CMakeLists.txt
+    │   ├── include
+    │   ├── LICENSE
+    │   ├── package.xml
+    │   ├── README.md
+    │   └── src
+    │       └── imu_filter.cpp
+    ├── teleop_master
+    │   ├── CMakeLists.txt
+    │   ├── config
+    │   │   └── ps3.config.yaml
+    │   ├── launch
+    │   │   └── teleop_master.launch
+    │   ├── package.xml
+    │   └── src
+    │       └── teleop_master_node.cpp
+    ├── third_party
+    │   ├── driver_common
+    │   │   ├── driver_base
+    │   │   │   ├── CHANGELOG.rst
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── include
+    │   │   │   │   └── driver_base
+    │   │   │   │       ├── driver.h
+    │   │   │   │       └── driver_node.h
+    │   │   │   ├── mainpage.dox
+    │   │   │   ├── msg
+    │   │   │   │   ├── ConfigString.msg
+    │   │   │   │   ├── ConfigValue.msg
+    │   │   │   │   └── SensorLevels.msg
+    │   │   │   └── package.xml
+    │   │   ├── driver_common
+    │   │   │   ├── CHANGELOG.rst
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   └── package.xml
+    │   │   └── timestamp_tools
+    │   │       ├── CHANGELOG.rst
+    │   │       ├── CMakeLists.txt
+    │   │       ├── include
+    │   │       │   └── timestamp_tools
+    │   │       │       ├── periodic_timestamp_min_filter.h
+    │   │       │       └── trigger_matcher.h
+    │   │       ├── mainpage.dox
+    │   │       ├── package.xml
+    │   │       └── test
+    │   │           └── test_trigger_matcher.cpp
+    │   ├── install_driver.sh
+    │   ├── install_joy.sh
+    │   ├── install_joy_teleop.sh
+    │   ├── install_move_base.sh
+    │   ├── install_navigation.sh
+    │   ├── install_urg_node.sh
+    │   ├── ira_laser_tools
+    │   ├── laser_proc
+    │   │   ├── CHANGELOG.rst
+    │   │   ├── CMakeLists.txt
+    │   │   ├── include
+    │   │   │   └── laser_proc
+    │   │   │       ├── LaserProc.h
+    │   │   │       ├── LaserProcROS.h
+    │   │   │       ├── LaserPublisher.h
+    │   │   │       └── LaserTransport.h
+    │   │   ├── nodelets.xml
+    │   │   ├── package.xml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── laser_proc.cpp
+    │   │       ├── LaserProc.cpp
+    │   │       ├── LaserProcNodelet.cpp
+    │   │       ├── LaserProcROS.cpp
+    │   │       ├── LaserPublisher.cpp
+    │   │       └── LaserTransport.cpp
+    │   ├── ros_waypoint_generator
+    │   │   ├── CMakeLists.txt
+    │   │   ├── msg
+    │   │   │   ├── WaypointArray.msg
+    │   │   │   └── Waypoint.msg
+    │   │   ├── package.xml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── ros_waypoint_generator.cpp
+    │   │       ├── ros_waypoint_saver.cpp
+    │   │       └── ros_waypoint_server.cpp
+    │   ├── rt_usb_9axisimu
+    │   ├── urg_c
+    │   │   ├── AUTHORS.txt
+    │   │   ├── CHANGELOG.rst
+    │   │   ├── CMakeLists.txt
+    │   │   ├── current
+    │   │   │   ├── build_rule.mk
+    │   │   │   ├── COPYRIGHT.txt
+    │   │   │   ├── dox
+    │   │   │   │   ├── connect_and_get.c
+    │   │   │   │   ├── connect_ethernet.c
+    │   │   │   │   ├── convert_xy.c
+    │   │   │   │   ├── doxygen_stylesheet.css
+    │   │   │   │   ├── get_scans.c
+    │   │   │   │   ├── get_timestamp.c
+    │   │   │   │   ├── library_sample.dox
+    │   │   │   │   ├── library_tutorial.dox
+    │   │   │   │   ├── mainpage.dox
+    │   │   │   │   ├── Makefile
+    │   │   │   │   ├── multiecho_image.svg
+    │   │   │   │   ├── sensor_angle_image.svg
+    │   │   │   │   ├── sensor_index_image.svg
+    │   │   │   │   ├── sensor_step_image.svg
+    │   │   │   │   ├── set_parameter.c
+    │   │   │   │   ├── skip_scan_image.svg
+    │   │   │   │   ├── usage_gcc.dox
+    │   │   │   │   ├── usage_windows_bat.dox
+    │   │   │   │   └── usage_windows_vcproj.dox
+    │   │   │   ├── Doxyfile
+    │   │   │   ├── Doxyfile_ja
+    │   │   │   ├── include
+    │   │   │   │   └── urg_c
+    │   │   │   │       ├── urg_connection.h
+    │   │   │   │       ├── urg_debug.h
+    │   │   │   │       ├── urg_detect_os.h
+    │   │   │   │       ├── urg_errno.h
+    │   │   │   │       ├── urg_ring_buffer.h
+    │   │   │   │       ├── urg_sensor.h
+    │   │   │   │       ├── urg_serial.h
+    │   │   │   │       ├── urg_serial_utils.h
+    │   │   │   │       ├── urg_tcpclient.h
+    │   │   │   │       ├── urg_time.h
+    │   │   │   │       └── urg_utils.h
+    │   │   │   ├── Install.txt
+    │   │   │   ├── Makefile
+    │   │   │   ├── Makefile.release
+    │   │   │   ├── samples
+    │   │   │   │   ├── angle_convert_test.c
+    │   │   │   │   ├── calculate_xy.c
+    │   │   │   │   ├── find_port.c
+    │   │   │   │   ├── get_distance.c
+    │   │   │   │   ├── get_distance_intensity.c
+    │   │   │   │   ├── get_multiecho.c
+    │   │   │   │   ├── get_multiecho_intensity.c
+    │   │   │   │   ├── ld_setupapi.sh
+    │   │   │   │   ├── ld_wsock.sh
+    │   │   │   │   ├── Makefile
+    │   │   │   │   ├── Makefile.release
+    │   │   │   │   ├── open_urg_sensor.c
+    │   │   │   │   ├── open_urg_sensor.h
+    │   │   │   │   ├── reboot_test.c
+    │   │   │   │   ├── sensor_parameter.c
+    │   │   │   │   ├── sync_time_stamp.c
+    │   │   │   │   └── timeout_test.c
+    │   │   │   ├── src
+    │   │   │   │   ├── Makefile
+    │   │   │   │   ├── Makefile.release
+    │   │   │   │   ├── urg_connection.c
+    │   │   │   │   ├── urg_debug.c
+    │   │   │   │   ├── urg_ring_buffer.c
+    │   │   │   │   ├── urg_sensor.c
+    │   │   │   │   ├── urg_serial.c
+    │   │   │   │   ├── urg_serial_linux.c
+    │   │   │   │   ├── urg_serial_utils.c
+    │   │   │   │   ├── urg_serial_utils_linux.c
+    │   │   │   │   ├── urg_serial_utils_windows.c
+    │   │   │   │   ├── urg_serial_windows.c
+    │   │   │   │   ├── urg_tcpclient.c
+    │   │   │   │   ├── urg_time.c
+    │   │   │   │   └── urg_utils.c
+    │   │   │   ├── urg_c-config.in
+    │   │   │   ├── viewers
+    │   │   │   │   ├── Makefile
+    │   │   │   │   └── viewer_sdl
+    │   │   │   │       ├── Makefile
+    │   │   │   │       ├── plotter_sdl.c
+    │   │   │   │       ├── plotter_sdl.h
+    │   │   │   │       └── viewer_sdl.c
+    │   │   │   ├── visual_cpp
+    │   │   │   │   ├── calculate_xy
+    │   │   │   │   │   └── calculate_xy.vcproj
+    │   │   │   │   ├── find_port
+    │   │   │   │   │   └── find_port.vcproj
+    │   │   │   │   ├── get_distance
+    │   │   │   │   │   └── get_distance.vcproj
+    │   │   │   │   ├── get_distance_intensity
+    │   │   │   │   │   └── get_distance_intensity.vcproj
+    │   │   │   │   ├── get_multiecho
+    │   │   │   │   │   └── get_multiecho.vcproj
+    │   │   │   │   ├── get_multiecho_intensity
+    │   │   │   │   │   └── get_multiecho_intensity.vcproj
+    │   │   │   │   ├── sensor_parameter
+    │   │   │   │   │   └── sensor_parameter.vcproj
+    │   │   │   │   ├── sync_time_stamp
+    │   │   │   │   │   └── sync_time_stamp.vcproj
+    │   │   │   │   ├── urg
+    │   │   │   │   │   └── urg.vcproj
+    │   │   │   │   └── urg.sln
+    │   │   │   └── windowsexe
+    │   │   │       ├── cleanobj.bat
+    │   │   │       └── compile.bat
+    │   │   ├── Makefile
+    │   │   ├── package.xml
+    │   │   ├── Readme_ja.txt
+    │   │   ├── README.md
+    │   │   ├── Readme.txt
+    │   │   ├── Releasenotes.txt
+    │   │   └── split_comment.rb
+    │   ├── urg_node
+    │   │   ├── cfg
+    │   │   │   └── URG.cfg
+    │   │   ├── CHANGELOG.rst
+    │   │   ├── CMakeLists.txt
+    │   │   ├── include
+    │   │   │   └── urg_node
+    │   │   │       ├── urg_c_wrapper.h
+    │   │   │       └── urg_node_driver.h
+    │   │   ├── launch
+    │   │   │   └── urg_lidar.launch
+    │   │   ├── msg
+    │   │   │   └── Status.msg
+    │   │   ├── package.xml
+    │   │   ├── README.md
+    │   │   ├── scripts
+    │   │   │   └── set_urg_ip.py
+    │   │   └── src
+    │   │       ├── getID.cpp
+    │   │       ├── urg_c_wrapper.cpp
+    │   │       ├── urg_node.cpp
+    │   │       └── urg_node_driver.cpp
+    │   └── ypspur_ros_bridge
+    │       ├── CMakeLists.txt
+    │       ├── launch
+    │       │   └── yamabico.launch
+    │       ├── package.xml
+    │       ├── rviz
+    │       │   └── yamabico.rviz
+    │       ├── scripts
+    │       │   ├── wait_and_ypspur_ros_bridge.sh
+    │       │   └── ypspur-coordinator.sh
+    │       └── src
+    │           └── ypspur_ros_bridge.cpp
+    └── waypoints_reader
+        ├── CMakeLists.txt
+        ├── config
+        │   └── waypoints.yaml
+        ├── package.xml
+        ├── README.md
+        └── scripts
+            └── yaml_reader.py
+
+106 directories, 295 files
