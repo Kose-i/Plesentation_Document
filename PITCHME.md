@@ -30,6 +30,10 @@
 
 ### 五号機
 
+`imu`
+`3DLider`
+`ypspur`
+
 ---
 
 ### 四号機
@@ -49,6 +53,10 @@
 
 ### 四号機
 
+`imu`
+`2DLider`
+`iMCs01`
+
 第三者のものが比較的少ない...
 
  管理が大変|
@@ -65,9 +73,27 @@
 
 ---
 
-### driver 周辺の設定ファイルの違いを調べることにしました.
+### `motor-driver` 周辺の設定ファイルの違いを調べることにしました.
 
-#### 四号機ではimcs01を使ってドライバの制御を行っていたため,imcs01に書き込むためにioctl()を使います.
+---
+
+### 四号機
+
+'fourth_robot_driver L155~L165'
+
+  // uin構造体cmd_ccmdの設定を書き込むためのioctl
+  // (設定を変えるたびに呼び出す必要あり)
+  if(ioctl(fd, URBTC_COUNTER_SET) < 0)
+    throw logic_error("Faild to ioctl: URBTC_COUNTER_SET");
+  //uin構造体cmd_ccmdの設定を書き込む
+  if(write(fd, &cmd_ccmd, sizeof(cmd_ccmd)) < 0){
+    ...
+    throw logic_error("Faild to write");
+  }
+
+---
+
+#### 四号機では`imcs01`を使ってドライバの制御を行っていたため,`imcs01`に書き込むために`ioctl()`を使います.
 
 ---
 
