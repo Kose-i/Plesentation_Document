@@ -1,9 +1,3 @@
-.
-├── fig_power_supply_connection.txt
-├── LICENCE
-├── README.md
-└── src
-    ├── CMakeLists.txt -> /opt/ros/kinetic/share/catkin/cmake/toplevel.cmake
     ├── fifth_robot_pkgs
     │   ├── fifth_robot_2dnav
     │   │   ├── CMakeLists.txt
