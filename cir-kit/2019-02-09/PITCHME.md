@@ -81,25 +81,29 @@
 
 'fourth_robot_driver L155~L165'
 
-####
 
+`
   // uin構造体cmd_ccmdの設定を書き込むためのioctl
   // (設定を変えるたびに呼び出す必要あり)
+
   if(ioctl(fd, URBTC_COUNTER_SET) < 0)
     throw logic_error("Faild to ioctl: URBTC_COUNTER_SET");
+
   //uin構造体cmd_ccmdの設定を書き込む
+
   if(write(fd, &cmd_ccmd, sizeof(cmd_ccmd)) < 0){
     ...
     throw logic_error("Faild to write");
   }
+`
 
 ---
 
-#### 四号機では`imcs01`を使ってドライバの制御を行っていたため,`imcs01`に書き込むために`ioctl()`を使います.
+四号機では`imcs01`を使ってドライバの制御を行っていたため,`imcs01`に書き込むために`ioctl()`を使います.
 
 ---
 
-### ioctl関数の宣言部
+ioctl関数の宣言部
 
 `<sys/ioctl.h>`
 
@@ -109,6 +113,14 @@
 
 ---
 
-### `ファイルディスクリプタを取り,ファイルへアクセスします.`
+`ファイルディスクリプタを取り,ファイルへアクセスします.`
 
 ---
+
+ファイルディスクリプタを持つためには`open()`関数を使って,ファイルディスクリプタを受け取る必要があります.
+
+---
+
+### 参考資料
+
+[［試して理解］Linuxのしくみ～実験と図解で学ぶOSとハードウェアの基礎知識](http://gihyo.jp/book/2018/978-4-7741-9607-7)実験プログラム
