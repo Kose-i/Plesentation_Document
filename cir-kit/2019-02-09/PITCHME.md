@@ -126,6 +126,8 @@
 
 open()システムコールはファイルディスクリプタを返します.
 
+エラーが発生した場合には-1が返ります.
+
 `
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -134,6 +136,7 @@ open()システムコールはファイルディスクリプタを返します.
 int open(const char *name, int flags);
 int open(const char *name, int flags, mode_t mode);
 `
+
 ---
 
 flagsにはO_RDONLY, o_WRONLY, o_RDWRを指定します.
@@ -143,32 +146,35 @@ flagsにはO_RDONLY, o_WRONLY, o_RDWRを指定します.
 ---
 
 O_APPEND
-
+- ファイルを追加書きモード
 O_ASYNC
-
+- ファイルが端末またはソケット時にシグナルを発生させます.
 O_CREAT
-
+- 指定されたファイルがないときに,新たに作成します.
 O_DIRECT
+- ダイレクトI/O用にファイルを開く.
 
 ---
 
 O_DIRECTORY
-
+- nameがディレクトリでない場合はエラーを返します.
 O_EXCL
-
+- nameの名前が存在していた場合エラーを返します.
 O_LARGEFILE
-
+- サイズが2G以上のファイルを開くときに指定します.64ビットアーキテクチャの場合デフォルトで設定されます.
 O_NOCTTY
+- nameが端末を指す場合に,プロセスの制御端末にしません.
 
 ---
 
 O_NOFOLLOW
-
+- nameがシンボリックリンクのときにエラーを返します.
 O_NONBLOCK
-
+- ファイルをノンブロックモードで開きます.
 O_SYNC
-
+- 同期I/O用にファイルを開きます.
 O_TRUNC
+- ファイルがすでに存在し,かつ書き込み用のフラグを与えられているとき,ファイルをトランケートします.
 
 ---
 
@@ -179,32 +185,35 @@ modeはパーミッションを指定できます
 ---
 
 S_IRWXU
-
+- rwx --- ---
 S_IRUSR
-
+- r-- --- ---
+S_IWUSR
+- -w- --- ---
 S_IXUSR
-
-S_IXUSR
+- --x --- ---
 
 ---
 
 S_IRWXG
-
+- --- rwx ---
 S_IRGRP
-
+- --- r-- ---
 S_IWGRP
-
+- --- -w- ---
 S_IXGRP
+- --- --x ---
 
 ---
 
 S_IRWXO
-
+- --- --- rwx
 S_IROTH
-
+- --- --- r--
 S_IWOTH
-
+- --- --- -w-
 S_IXOTH
+- --- --- --x
 
 ---
 
