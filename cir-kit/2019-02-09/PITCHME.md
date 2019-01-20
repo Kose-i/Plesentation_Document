@@ -124,6 +124,90 @@
 
 ---
 
+open()システムコールはファイルディスクリプタを返します.
+
+`
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
+int open(const char *name, int flags);
+int open(const char *name, int flags, mode_t mode);
+`
+---
+
+flagsにはO_RDONLY, o_WRONLY, o_RDWRを指定します.
+
+またビットOR演算子で動作を制御することができます.
+
+---
+
+O_APPEND
+
+O_ASYNC
+
+O_CREAT
+
+O_DIRECT
+
+---
+
+O_DIRECTORY
+
+O_EXCL
+
+O_LARGEFILE
+
+O_NOCTTY
+
+---
+
+O_NOFOLLOW
+
+O_NONBLOCK
+
+O_SYNC
+
+O_TRUNC
+
+---
+
+modeはパーミッションを指定できます
+
+こちらもビットOR演算子で渡すことができます.
+
+---
+
+S_IRWXU
+
+S_IRUSR
+
+S_IXUSR
+
+S_IXUSR
+
+---
+
+S_IRWXG
+
+S_IRGRP
+
+S_IWGRP
+
+S_IXGRP
+
+---
+
+S_IRWXO
+
+S_IROTH
+
+S_IWOTH
+
+S_IXOTH
+
+---
+
 ioctl関数の宣言部
 
 `<sys/ioctl.h>`
