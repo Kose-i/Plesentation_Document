@@ -124,6 +124,8 @@
 
 ---
 
+## `open()`システムコール
+
 open()システムコールはファイルディスクリプタを返します.
 
 エラーが発生した場合には-1が返ります.
@@ -139,11 +141,15 @@ int open(const char *name, int flags, mode_t mode);
 
 ---
 
+## `open()`システムコール
+
 flagsにはO_RDONLY, o_WRONLY, o_RDWRを指定します.
 
 またビットOR演算子で動作を制御することができます.
 
 ---
+
+## `open()`システムコール
 
 O_APPEND
 - ファイルを追加書きモード
@@ -156,6 +162,8 @@ O_DIRECT
 
 ---
 
+## `open()`システムコール
+
 O_DIRECTORY
 - nameがディレクトリでない場合はエラーを返します.
 O_EXCL
@@ -166,6 +174,8 @@ O_NOCTTY
 - nameが端末を指す場合に,プロセスの制御端末にしません.
 
 ---
+
+## `open()`システムコール
 
 O_NOFOLLOW
 - nameがシンボリックリンクのときにエラーを返します.
@@ -178,11 +188,15 @@ O_TRUNC
 
 ---
 
+## `open()`システムコール
+
 modeはパーミッションを指定できます
 
 こちらもビットOR演算子で渡すことができます.
 
 ---
+
+## `open()`システムコール
 
 S_IRWXU
 - rwx --- ---
@@ -195,6 +209,8 @@ S_IXUSR
 
 ---
 
+## `open()`システムコール
+
 S_IRWXG
 - --- rwx ---
 S_IRGRP
@@ -206,6 +222,8 @@ S_IXGRP
 
 ---
 
+## `open()`システムコール
+
 S_IRWXO
 - --- --- rwx
 S_IROTH
@@ -214,6 +232,35 @@ S_IWOTH
 - --- --- -w-
 S_IXOTH
 - --- --- --x
+
+---
+
+## `creat()`システムコール
+
+creat()システムコールはopen()システムコールの特殊かと言っても良いでしょう.
+
+`
+int creat(const char* name, mode_t mode);
+`
+
+これは次のコードと同義です.
+`
+int creat(const char* name, mode_t mode)
+{
+  return open(name, O_WRONLY | O_CREAT | O_TRUNC, mode);
+}
+`
+---
+
+## `read()`システムコール
+
+`
+#include <unistd.h>
+
+ssize_t read(int fd, void *buf, size_t len);
+`
+
+受け取ったバイト数を返します.
 
 ---
 
