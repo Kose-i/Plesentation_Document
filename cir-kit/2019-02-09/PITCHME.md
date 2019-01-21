@@ -110,7 +110,7 @@
 ### システムイメージ
 
 @div[left-50]
-![](./img/test_gimp.png)
+![](img/test_gimp.png)
 @divend
 
 ---
