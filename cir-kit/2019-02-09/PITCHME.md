@@ -109,7 +109,7 @@
 ---
 ### システムイメージ
 
-![imgToKernel](img/test_gimp.png)
+![](./img/test_gimp.png)
 
 ---
 
@@ -132,10 +132,13 @@ open()システムコールはファイルディスクリプタを返します.
 
 `
 #include <sys/types.h>
+
 #include <sys/stat.h>
+
 #include <fcntl.h>
 
 int open(const char *name, int flags);
+
 int open(const char *name, int flags, mode_t mode);
 `
 
@@ -199,12 +202,19 @@ modeはパーミッションを指定できます
 ## `open()`システムコール
 
 S_IRWXU
+
 - rwx --- ---
+
 S_IRUSR
+
 - r-- --- ---
+
 S_IWUSR
+
 - -w- --- ---
+
 S_IXUSR
+
 - --x --- ---
 
 ---
@@ -212,12 +222,19 @@ S_IXUSR
 ## `open()`システムコール
 
 S_IRWXG
+
 - --- rwx ---
+
 S_IRGRP
+
 - --- r-- ---
+
 S_IWGRP
+
 - --- -w- ---
+
 S_IXGRP
+
 - --- --x ---
 
 ---
@@ -225,12 +242,19 @@ S_IXGRP
 ## `open()`システムコール
 
 S_IRWXO
+ 
 - --- --- rwx
+
 S_IROTH
+
 - --- --- r--
+
 S_IWOTH
+
 - --- --- -w-
+
 S_IXOTH
+
 - --- --- --x
 
 ---
@@ -255,7 +279,7 @@ int creat(const char* name, mode_t mode)
 ## `read()`システムコール
 
 `
-#include <unistd.h>
+#include < unistd.h >
 
 ssize_t read(int fd, void *buf, size_t len);
 `
@@ -266,7 +290,7 @@ ssize_t read(int fd, void *buf, size_t len);
 
 ioctl関数の宣言部
 
-`<sys/ioctl.h>`
+`#include < sys/ioctl.h >`
 
 にて次のように宣言されています.
 
