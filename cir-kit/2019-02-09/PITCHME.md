@@ -109,9 +109,7 @@
 ---
 ### システムイメージ
 
-@div[left-50]
-![](img/test_gimp.png)
-@divend
+<img src="img/test_gimp.png"/>
 
 ---
 
