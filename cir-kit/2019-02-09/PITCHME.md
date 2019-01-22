@@ -109,7 +109,7 @@
 ---
 ### システムイメージ
 
-<img src="img/test_gimp.png"/>
+<img src="img/test_gimp.png" height="80px" width="80px"/>
 
 ---
 
@@ -130,7 +130,7 @@ open()システムコールはファイルディスクリプタを返します.
 
 エラーが発生した場合には-1が返ります.
 
-`
+```
 #include <sys/types.h>
 
 #include <sys/stat.h>
@@ -140,7 +140,7 @@ open()システムコールはファイルディスクリプタを返します.
 int open(const char *name, int flags);
 
 int open(const char *name, int flags, mode_t mode);
-`
+```
 
 ---
 
@@ -268,21 +268,22 @@ int creat(const char* name, mode_t mode);
 `
 
 これは次のコードと同義です.
-`
+```
 int creat(const char* name, mode_t mode)
 {
   return open(name, O_WRONLY | O_CREAT | O_TRUNC, mode);
 }
-`
+```
+
 ---
 
 ## `read()`システムコール
 
-`
+```
 #include < unistd.h >
 
 ssize_t read(int fd, void *buf, size_t len);
-`
+```
 
 受け取ったバイト数を返します.
 
