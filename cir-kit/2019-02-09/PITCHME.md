@@ -285,7 +285,9 @@ int creat(const char* name, mode_t mode)
 ssize_t read(int fd, void *buf, size_t len);
 ```
 
-受け取ったバイト数を返します.
+ここで引数のlenはバイト数を与えます.
+
+受け取ったバイト数を返します.エラーが発生した場合は-1が返ります.
 
 ---
 
@@ -310,6 +312,7 @@ ioctl関数の宣言部
 ### 参考資料
 
 [［試して理解］Linuxのしくみ～実験と図解で学ぶOSとハードウェアの基礎知識](http://gihyo.jp/book/2018/978-4-7741-9607-7)実験プログラム
+
 [Linuxシステムプログラミング](https://www.oreilly.co.jp/books/9784873113623/)
 
 ---
