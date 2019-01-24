@@ -109,7 +109,7 @@
 ---
 ### システムイメージ
 
-<img src="img/test_gimp.png" height="80px" width="80px"/>
+<img src="img/system_kernel.png" height="80px" width="80px"/>
 
 ---
 
