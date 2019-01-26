@@ -119,7 +119,7 @@
 
 ### システムイメージ
 
-<img src="img/system_kernel.png" height="80px" width="80px"/>
+![alt](img/system_kernel.png)
 
 ---
 
