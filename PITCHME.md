@@ -197,7 +197,7 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 
 ### システムコール
 
-<img src="img/process_and_os.png">
+<img src="process_and_os.png"/>
 
 ---
 
