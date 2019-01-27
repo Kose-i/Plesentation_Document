@@ -128,7 +128,7 @@
 
 ### システムイメージ
 
-![img]:(cir-kit/2019-02-09/img/system_kernel.png)
+[img](cir-kit/2019-02-09/img/system_kernel.png)
 
 ---
 
@@ -197,7 +197,7 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 
 ### システムコール
 
-![img]:(cir-kit/2019-02-09/img/process_and_os.png)
+[img](cir-kit/2019-02-09/img/process_and_os.png)
 
 ---
 
