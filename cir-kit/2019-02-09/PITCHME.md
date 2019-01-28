@@ -104,7 +104,7 @@
 'fourth_robot_driver L155~L165'
 
 
-```
+```c++
 
   if(ioctl(fd, URBTC_COUNTER_SET) < 0)
     throw logic_error("Faild to ioctl: URBTC_COUNTER_SET");
@@ -166,7 +166,7 @@ target は元となったファイルを指し示します.
 
 ソフトリンクされたファイルとハードリンクをしたファイルはinode番号が等しくありません.
 
-```
+```c++
 ls -li
 
 1049558 soft-link-target.txt
@@ -219,7 +219,7 @@ open()システムコールはファイルディスクリプタを返すシス�
 
 エラーが発生した場合には-1が返ります.
 
-```
+```c++
 #include <sys/types.h>
 
 #include <sys/stat.h>
@@ -362,12 +362,12 @@ S_IXOTH
 
 `creat()`システムコールは`open()`システムコールの特殊化と言っても良いでしょう.
 
-```
+```c++
 int creat(const char* name, mode_t mode);
 ```
 
 これは次のコードと同義です.
-```
+```c++
 int creat(const char* name, mode_t mode)
 {
   return open(name, O_WRONLY | O_CREAT | O_TRUNC, mode);
@@ -378,7 +378,7 @@ int creat(const char* name, mode_t mode)
 
 ## `read()`システムコール
 
-```
+```c++
 #include < unistd.h >
 
 ssize_t read(int fd, void *buf, size_t len);
@@ -420,7 +420,7 @@ ioctl関数の宣言部
 
 ## `ioctl()`システムコール
 
-```
+```c++
 ioctl(cdrom_fd, CDROMEJECT, 0);
 ```
 
