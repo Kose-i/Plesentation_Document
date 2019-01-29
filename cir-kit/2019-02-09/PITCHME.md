@@ -7,8 +7,7 @@
 
 ---
 @snap[north-west]
-@size[0.5em]
-# はじめに
+はじめに
 @snapend
 
 ## 私は,システムコールについて話します.
