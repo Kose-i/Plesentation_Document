@@ -217,7 +217,7 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 
 ---
 @snap[north-west]
-## `open()`システムコール
+`open()`システムコール
 @snapend
 
 open()システムコールはファイルディスクリプタを返すシステムコール関数です.
@@ -238,7 +238,7 @@ int open(const char *name, int flags, mode_t mode);
 
 ---
 @snap[north-west]
-## `open()`システムコール
+`open()`システムコール
 @snapend
 
 flagsにはO_RDONLY, O_WRONLY, O_RDWRを指定します.
@@ -247,7 +247,7 @@ flagsにはO_RDONLY, O_WRONLY, O_RDWRを指定します.
 
 ---
 @snap[north-west]
-## `open()`システムコール
+`open()`システムコール
 @snapend
 
 O_APPEND
@@ -264,7 +264,7 @@ O_DIRECT
 
 ---
 @snap[north-west]
-## `open()`システムコール
+`open()`システムコール
 @snapend
 
 O_DIRECTORY
@@ -281,7 +281,7 @@ O_NOCTTY
 
 ---
 @snap[north-west]
-## `open()`システムコール
+`open()`システムコール
 @snapend
 
 O_NOFOLLOW
@@ -299,7 +299,7 @@ O_TRUNC
 
 ---
 @snap[north-west]
-## `open()`システムコール
+`open()`システムコール
 @snapend
 
 modeはパーミッションを指定できます
@@ -308,7 +308,7 @@ modeはパーミッションを指定できます
 
 ---
 @snap[north-west]
-## `open()`システムコール
+`open()`システムコール
 @snapend
 @snapend
 
@@ -331,7 +331,7 @@ S_IXUSR
 ---
 
 @snap[north-west]
-## `open()`システムコール
+`open()`システムコール
 @snapend
 
 S_IRWXG
@@ -353,7 +353,7 @@ S_IXGRP
 ---
 
 @snap[north-west]
-## `open()`システムコール
+`open()`システムコール
 @snapend
 
 S_IRWXO
@@ -375,7 +375,7 @@ S_IXOTH
 ---
 
 @snap[north-west]
-## `creat()`システムコール
+`creat()`システムコール
 @snapend
 
 `creat()`システムコールは`open()`システムコールの特殊化と言っても良いでしょう.
@@ -395,7 +395,7 @@ int creat(const char* name, mode_t mode)
 ---
 
 @snap[north-west]
-## `read()`システムコール
+`read()`システムコール
 @snapend
 
 ```c++
@@ -415,7 +415,7 @@ ssize_t read(int fd, void *buf, size_t len);
 ---
 
 @snap[north-west]
-## `ioctl()`システムコール
+`ioctl()`システムコール
 @snapend
 
 ioctl関数の宣言部
@@ -430,7 +430,7 @@ ioctl関数の宣言部
 
 ---
 @snap[north-west]
-## `ioctl()`システムコール
+`ioctl()`システムコール
 @snapend
 
 `ioctl()`システムコールは特殊なI/O操作時に使用されるものです.
@@ -441,7 +441,7 @@ ioctl関数の宣言部
 
 ---
 @snap[north-west]
-## `ioctl()`システムコール
+`ioctl()`システムコール
 @snapend
 
 ```c++
