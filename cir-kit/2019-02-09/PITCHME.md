@@ -6,7 +6,8 @@
    2019-02-09 田村 晃聖
 
 ---
-@snap[north-west span-30]
+@snap[north-west]
+@size[0.5em]
 # はじめに
 @snapend
 
