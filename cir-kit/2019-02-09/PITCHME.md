@@ -202,7 +202,7 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 
 ### システムコール
 
-<img src="cir-kit/2019-02-09/img/process_and_os.png"/>
+![](cir-kit/2019-02-09/img/process_and_os.png)
 
 ---
 
@@ -216,8 +216,9 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 - 上記以外のファイルシステム依存の特殊な処理: ioctl()
 
 ---
-
+@snap[north-west]
 ## `open()`システムコール
+@snapend
 
 open()システムコールはファイルディスクリプタを返すシステムコール関数です.
 
@@ -236,16 +237,18 @@ int open(const char *name, int flags, mode_t mode);
 ```
 
 ---
-
+@snap[north-west]
 ## `open()`システムコール
+@snapend
 
 flagsにはO_RDONLY, O_WRONLY, O_RDWRを指定します.
 
 またビットOR演算子で動作を制御することができます.
 
 ---
-
+@snap[north-west]
 ## `open()`システムコール
+@snapend
 
 O_APPEND
 - ファイルを追加書きモード
@@ -260,8 +263,9 @@ O_DIRECT
 - ダイレクトI/O用にファイルを開く.
 
 ---
-
+@snap[north-west]
 ## `open()`システムコール
+@snapend
 
 O_DIRECTORY
 - nameがディレクトリでない場合はエラーを返します.
@@ -276,8 +280,9 @@ O_NOCTTY
 - nameが端末を指す場合に,プロセスの制御端末にしません.
 
 ---
-
+@snap[north-west]
 ## `open()`システムコール
+@snapend
 
 O_NOFOLLOW
 - nameがシンボリックリンクのときにエラーを返します.
@@ -293,16 +298,19 @@ O_TRUNC
 
 
 ---
-
+@snap[north-west]
 ## `open()`システムコール
+@snapend
 
 modeはパーミッションを指定できます
 
 こちらもビットOR演算子で渡すことができます.
 
 ---
-
+@snap[north-west]
 ## `open()`システムコール
+@snapend
+@snapend
 
 S_IRWXU
 
@@ -322,7 +330,9 @@ S_IXUSR
 
 ---
 
+@snap[north-west]
 ## `open()`システムコール
+@snapend
 
 S_IRWXG
 
@@ -342,7 +352,9 @@ S_IXGRP
 
 ---
 
+@snap[north-west]
 ## `open()`システムコール
+@snapend
 
 S_IRWXO
  
@@ -362,7 +374,9 @@ S_IXOTH
 
 ---
 
+@snap[north-west]
 ## `creat()`システムコール
+@snapend
 
 `creat()`システムコールは`open()`システムコールの特殊化と言っても良いでしょう.
 
@@ -380,7 +394,9 @@ int creat(const char* name, mode_t mode)
 
 ---
 
+@snap[north-west]
 ## `read()`システムコール
+@snapend
 
 ```c++
 #include < unistd.h >
@@ -398,7 +414,9 @@ ssize_t read(int fd, void *buf, size_t len);
 
 ---
 
+@snap[north-west]
 ## `ioctl()`システムコール
+@snapend
 
 ioctl関数の宣言部
 
@@ -411,8 +429,9 @@ ioctl関数の宣言部
 ファイルディスクリプタを取り,ファイルへアクセスします.
 
 ---
-
+@snap[north-west]
 ## `ioctl()`システムコール
+@snapend
 
 `ioctl()`システムコールは特殊なI/O操作時に使用されるものです.
 
@@ -421,8 +440,9 @@ ioctl関数の宣言部
 帯域外通信が可能です.
 
 ---
-
+@snap[north-west]
 ## `ioctl()`システムコール
+@snapend
 
 ```c++
 ioctl(cdrom_fd, CDROMEJECT, 0);
@@ -435,8 +455,9 @@ ioctl(cdrom_fd, CDROMEJECT, 0);
 このように,`ioctl()`を使用するときは,そのデバイスの操作マニュアルについて調べる必要があります.
 
 ---
-
+@snap[north]
 ### 参考資料
+@snapend
 
 [最新パソコン・IT用語辞典](https://www.kinokuniya.co.jp/f/dsg-01-978477414174)
 
