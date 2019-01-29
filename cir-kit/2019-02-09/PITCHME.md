@@ -6,7 +6,9 @@
    2019-02-09 田村 晃聖
 
 ---
+@snap[north-west span-30]
 # はじめに
+@snapend
 
 ## 私は,システムコールについて話します.
 
@@ -128,7 +130,7 @@
 
 ### システムイメージ
 
-<img src="cir-kit/2019-02-09/img/system_kernel.png"/>
+![system-image](cir-kit/2019-02-09/img/system_kernel.png)
 
 
 ---
