@@ -3,6 +3,7 @@
   font-size:1em !important;
 }
 .name{
-  float:right;
   font-size:0.8em;
+  color:green;
+  float:right;
 }
