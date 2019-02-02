@@ -1,9 +1,14 @@
-# システムコールについて
+@title[Introduction]
+
+@snap[north main-title span-80]
+@css[heading](システムコールについて)
+@snapend
 
 
 
-
+@snap[south]
    2019-02-09 田村 晃聖
+@snapend
 
 ---
 @snap[north-west]

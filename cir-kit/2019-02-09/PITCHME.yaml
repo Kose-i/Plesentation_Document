@@ -1,4 +1,7 @@
 theme : beige
+
+theme-override: sets/css/PITCHME.css
+
 slide-number: true
 
 footnote: "2019-02-09 tamura"
