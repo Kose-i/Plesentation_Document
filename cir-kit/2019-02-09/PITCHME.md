@@ -7,7 +7,7 @@
 
 
 @snap[south span-50]
-2019-02-09 田村 晃聖
+@css[name](2019-02-09 田村 晃聖)
 @snapend
 
 ---
@@ -26,6 +26,10 @@
 
 ---
 
+@snap[north-west]
+はじめに
+@snapend
+
 @title[Why-systemcall]
 @snap[north]
 なぜシステムコールについて調べようと思ったのか.
@@ -37,6 +41,9 @@
 @snapend
 
 ---
+@snap[north-west]
+はじめに
+@snapend
 
 ### 四号機
 
@@ -52,6 +59,9 @@
     └── scripts
     
 ---
+@snap[north-west]
+はじめに
+@snapend
 
 ### 四号機のデバイス
 
@@ -66,6 +76,9 @@
 * `imu`
 
 ---
+@snap[north-west]
+はじめに
+@snapend
 
 ## `fifth_robot` `fourth_robot` の違い
 
@@ -75,12 +88,18 @@
 |`ypspur`|`iMCs01, BLHD5100K`|
 
 ---
+@snap[north-west]
+はじめに
+@snapend
 
 ### `motor-controller` を自分で管理する必要がありました.
 
 四号機のモータコントローラ・ドライバの設定ファイルを調べることにしました.
 
 ---
+@snap[north-west]
+はじめに
+@snapend
 
 @title[]
 @span[]
@@ -103,6 +122,9 @@
 ```
 
 ---
+@snap[north-west]
+はじめに
+@snapend
 
 四号機では`imcs01`を使ってドライバの制御を行っていたため,`imcs01`に書き込むために`ioctl()`を使います.
 
@@ -113,6 +135,8 @@
 @snapend
 
 ---
+@snap[north-west]
+@snapend
 
 ### システムイメージ
 
@@ -120,6 +144,8 @@
 
 
 ---
+@snap[north-west]
+@snapend
 
 ### システムコール
 
@@ -135,6 +161,8 @@
 この中で私は,ファイルシステム操作, ファイル操作について話します.
 
 ---
+@snap[north-west]
+@snapend
 
 ファイルアクセスにはinode番号を介して,ファイル情報を取得します.
 
@@ -151,6 +179,8 @@ inode番号は一意なものです.inode番号はファイルに一意に作成
 これについてはテストをしてみました.
 
 ---
+@snap[north-west]
+@snapend
 
 ハードリンクされたファイルとハードリンクをしたファイルはinode番号が等しくなっています.
 
@@ -168,6 +198,8 @@ ls -li
 ```
 
 ---
+@snap[north-west]
+@snapend
 
 inode番号を得る必要がある場合,`stat()`システムコールを利用して取得することができます.
 
@@ -188,12 +220,16 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 )
 
 ---
+@snap[north-west]
+@snapend
 
 ### システムコール
 
 ![](cir-kit/2019-02-09/assets/img/process_and_os.png)
 
 ---
+@snap[north-west]
+@snapend
 
 ファイルシステムのシステムコールのインターフェース
 
@@ -299,7 +335,6 @@ modeはパーミッションを指定できます
 @snap[north-west]
 `open()`システムコール
 @snapend
-@snapend
 
 S_IRWXU
 
@@ -318,7 +353,6 @@ S_IXUSR
 - --x --- ---
 
 ---
-
 @snap[north-west]
 `open()`システムコール
 @snapend
@@ -340,7 +374,6 @@ S_IXGRP
 - --- --x ---
 
 ---
-
 @snap[north-west]
 `open()`システムコール
 @snapend
@@ -362,7 +395,6 @@ S_IXOTH
 - --- --- --x
 
 ---
-
 @snap[north-west]
 `creat()`システムコール
 @snapend
@@ -382,7 +414,6 @@ int creat(const char* name, mode_t mode)
 ```
 
 ---
-
 @snap[north-west]
 `read()`システムコール
 @snapend
@@ -402,7 +433,6 @@ ssize_t read(int fd, void *buf, size_t len);
 途中に何かの割り込みがあった場合,戻り値とlenが異なるために識別することができます.
 
 ---
-
 @snap[north-west]
 `ioctl()`システムコール
 @snapend
@@ -443,6 +473,10 @@ ioctl(cdrom_fd, CDROMEJECT, 0);
 
 このように,`ioctl()`を使用するときは,そのデバイスの操作マニュアルについて調べる必要があります.
 
+---
+@snap[north]
+@size[3em](おわり)
+@snapend
 ---
 @snap[north]
 ### 参考資料
