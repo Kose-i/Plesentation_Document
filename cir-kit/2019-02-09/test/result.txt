@@ -1,6 +1,0 @@
-total 0
-1318364 -rw-rw-r-- 1 tamura-kosei tamura-kosei  0  2月  2 13:32 soft-link-target
-1318365 -rw-rw-r-- 2 tamura-kosei tamura-kosei  0  2月  2 13:33 hard-link-target
-1318365 -rw-rw-r-- 2 tamura-kosei tamura-kosei  0  2月  2 13:33 hard-link-test
-1318366 lrwxrwxrwx 1 tamura-kosei tamura-kosei 16  2月  2 13:33 soft-link-test -> soft-link-target
-1318367 -rw-rw-r-- 1 tamura-kosei tamura-kosei  0  2月  2 13:33 result.txt
