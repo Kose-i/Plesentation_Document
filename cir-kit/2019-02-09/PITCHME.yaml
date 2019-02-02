@@ -1,6 +1,6 @@
 theme : beige
 
-theme-override: ./sets/css/PITCHME.css
+theme-override: cir-kit/2019-02-09/sets/css/PITCHME.css
 
 slide-number: true
 
