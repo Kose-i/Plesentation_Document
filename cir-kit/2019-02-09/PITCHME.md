@@ -15,7 +15,9 @@
 はじめに
 @snapend
 
+@snap[]
 ## 私は,システムコールについて話します.
+@snapend
 
 - システムコールって何？
 - システムコールとは,OSが内蔵している基本的なルーチンを,アプリケーションで使うこと.特に基本的入出力を用いることをBIOSコールという.|
@@ -26,35 +28,6 @@
 
 
 - 四号機 の制御方法に深く関わっているためです.|
-
-- まずそれぞれ四号機と五号機との違いを見ていきます.|
-
----
-
-### 五号機
-
-    ├── fifth_robot_pkgs
-    │   ├── fifth_robot_2dnav # amcl move_base
-    │   ├── fifth_robot_description #cartographer simulator
-    │   ├── fifth_robot_launcher #sensor_bringup launchfile
-    │   ├── fifth_robot_map #map
-    │   └── fifth_robot_pkgs #nothing
-    ├── goal_sender #targetpose from csv
-    ├── goal_sender_msgs #msg generate for goal_sender
-    ├── ros_imu_filter #imu config
-    ├── teleop_master #radio control
-    ├── third_party #laser-driver ypspur
-    └── waypoints_reader #csv
-
----
-
-### 五号機のデバイス
-
-`imu`
-
-`3DLider`
-
-`ypspur`
 
 ---
 
@@ -81,8 +54,6 @@
 
 `BLHD5100K`
 
-### 使われていない
-
 `gim30`
 
 `imu`
@@ -100,13 +71,16 @@
 
 ---
 
-### `motor-driver` を自分で管理する必要がありました.
+### `motor-controller` を自分で管理する必要がありました.
 
 四号機のモータコントローラ・ドライバの設定ファイルを調べることにしました.
 
 ---
 
+@title[]
+@span[]
 ### 四号機
+@spanend
 
 'fourth_robot_driver L155~L165'
 
@@ -190,6 +164,7 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 
 このシステムコールを利用することで,
 
+@size[0.3em](
 - ファイルが存在するデバイスのデバイス番号
 - inode番号
 - パーミッション
@@ -202,6 +177,7 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 - 最終アクセス時刻
 - 最終更新時刻
 - 最終情報変更時刻
+)
 
 ---
 
@@ -466,6 +442,6 @@ ioctl(cdrom_fd, CDROMEJECT, 0);
 
 [最新パソコン・IT用語辞典](https://www.kinokuniya.co.jp/f/dsg-01-978477414174)
 
-[［試して理解］Linuxのしくみ～実験と図解で学ぶOSとハードウェアの基礎知識](http://gihyo.jp/book/2018/978-4-7741-9607-7)実験プログラム
+[［試して理解］Linuxのしくみ～実験と図解で学ぶOSとハードウェアの基礎知識 実験プログラム](http://gihyo.jp/book/2018/978-4-7741-9607-7)
 
 [Linuxシステムプログラミング](https://www.oreilly.co.jp/books/9784873113623/)
