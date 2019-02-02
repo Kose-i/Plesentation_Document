@@ -1,13 +1,13 @@
 @title[Introduction]
 
-@snap[north headline span-80]
+@snap[north headline span-100]
 @css[main-title](システムコールについて)
 @snapend
 
 
 
-@snap[south]
-   2019-02-09 田村 晃聖
+@snap[south span-50]
+2019-02-09 田村 晃聖
 @snapend
 
 ---
