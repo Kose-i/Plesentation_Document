@@ -1,6 +1,6 @@
 @title[Introduction]
 
-@snap[north span-100]
+@snap[north headline span-100]
 @css[main-title](システムコールについて)
 @snapend
 
