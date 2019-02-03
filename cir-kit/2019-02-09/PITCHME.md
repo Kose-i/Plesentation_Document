@@ -12,10 +12,10 @@
 
 ---
 @snap[north-west]
-はじめに
+@css[sub-title](はじめに)
 @snapend
 
-@snap[]
+@snap[north]
 ## 私は,システムコールについて話します.
 @snapend
 
@@ -27,7 +27,7 @@
 ---
 
 @snap[north-west]
-はじめに
+@css[sub-title](はじめに)
 @snapend
 
 @title[Why-systemcall]
@@ -42,7 +42,7 @@
 
 ---
 @snap[north-west]
-はじめに
+@css[sub-title](はじめに)
 @snapend
 
 ### 四号機
@@ -60,7 +60,7 @@
     
 ---
 @snap[north-west]
-はじめに
+@css[sub-title](はじめに)
 @snapend
 
 ### 四号機のデバイス
@@ -77,7 +77,7 @@
 
 ---
 @snap[north-west]
-はじめに
+@css[sub-title](はじめに)
 @snapend
 
 ## `fifth_robot` `fourth_robot` の違い
@@ -89,7 +89,7 @@
 
 ---
 @snap[north-west]
-はじめに
+@css[sub-title](はじめに)
 @snapend
 
 ### `motor-controller` を自分で管理する必要がありました.
@@ -98,13 +98,13 @@
 
 ---
 @snap[north-west]
-はじめに
+@css[sub-title](はじめに)
 @snapend
 
-@title[]
-@span[]
+@title[forth]
+@snap[north]
 ### 四号機
-@spanend
+@snapend
 
 'fourth_robot_driver L155~L165'
 
@@ -123,7 +123,7 @@
 
 ---
 @snap[north-west]
-はじめに
+@css[sub-title](はじめに)
 @snapend
 
 四号機では`imcs01`を使ってドライバの制御を行っていたため,`imcs01`に書き込むために`ioctl()`を使います.
@@ -136,6 +136,7 @@
 
 ---
 @snap[north-west]
+@css[sub-title](システムコールとは)
 @snapend
 
 ### システムイメージ
@@ -145,6 +146,7 @@
 
 ---
 @snap[north-west]
+@css[sub-title](システムコールとは)
 @snapend
 
 ### システムコール
@@ -162,6 +164,7 @@
 
 ---
 @snap[north-west]
+@css[sub-title](システムコールとは)
 @snapend
 
 ファイルアクセスにはinode番号を介して,ファイル情報を取得します.
@@ -180,6 +183,7 @@ inode番号は一意なものです.inode番号はファイルに一意に作成
 
 ---
 @snap[north-west]
+@css[sub-title](システムコールとは)
 @snapend
 
 ハードリンクされたファイルとハードリンクをしたファイルはinode番号が等しくなっています.
@@ -199,13 +203,14 @@ ls -li
 
 ---
 @snap[north-west]
+@css[sub-title](システムコールとは)
 @snapend
 
 inode番号を得る必要がある場合,`stat()`システムコールを利用して取得することができます.
 
 このシステムコールを利用することで,
 
-#@size[0.1em](- ファイルが存在するデバイスのデバイス番号
+@css[small-size](- ファイルが存在するデバイスのデバイス番号
 - inode番号
 - パーミッション
 - ハードリンク数
@@ -221,6 +226,7 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 
 ---
 @snap[north-west]
+@css[sub-title](システムコールとは)
 @snapend
 
 ### システムコール
@@ -229,6 +235,7 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 
 ---
 @snap[north-west]
+@css[sub-title](システムコールとは)
 @snapend
 
 ファイルシステムのシステムコールのインターフェース
@@ -242,7 +249,7 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 
 ---
 @snap[north-west]
-`open()`システムコール
+@css[sub-title](`open()`システムコール)
 @snapend
 
 open()システムコールはファイルディスクリプタを返すシステムコール関数です.
@@ -263,7 +270,7 @@ int open(const char *name, int flags, mode_t mode);
 
 ---
 @snap[north-west]
-`open()`システムコール
+@css[sub-title](`open()`システムコール)
 @snapend
 
 flagsにはO_RDONLY, O_WRONLY, O_RDWRを指定します.
@@ -272,7 +279,7 @@ flagsにはO_RDONLY, O_WRONLY, O_RDWRを指定します.
 
 ---
 @snap[north-west]
-`open()`システムコール
+@css[sub-title](`open()`システムコール)
 @snapend
 
 O_APPEND
@@ -289,7 +296,7 @@ O_DIRECT
 
 ---
 @snap[north-west]
-`open()`システムコール
+@css[sub-title](`open()`システムコール)
 @snapend
 
 O_DIRECTORY
@@ -306,7 +313,7 @@ O_NOCTTY
 
 ---
 @snap[north-west]
-`open()`システムコール
+@css[sub-title](`open()`システムコール)
 @snapend
 
 O_NOFOLLOW
@@ -324,7 +331,7 @@ O_TRUNC
 
 ---
 @snap[north-west]
-`open()`システムコール
+@css[sub-title](`open()`システムコール)
 @snapend
 
 modeはパーミッションを指定できます
@@ -333,7 +340,7 @@ modeはパーミッションを指定できます
 
 ---
 @snap[north-west]
-`open()`システムコール
+@css[sub-title](`open()`システムコール)
 @snapend
 
 S_IRWXU
@@ -354,7 +361,7 @@ S_IXUSR
 
 ---
 @snap[north-west]
-`open()`システムコール
+@css[sub-title](`open()`システムコール)
 @snapend
 
 S_IRWXG
@@ -375,7 +382,7 @@ S_IXGRP
 
 ---
 @snap[north-west]
-`open()`システムコール
+@css[sub-title](`open()`システムコール)
 @snapend
 
 S_IRWXO
@@ -396,7 +403,7 @@ S_IXOTH
 
 ---
 @snap[north-west]
-`creat()`システムコール
+@css[sub-title](`creat()`システムコール)
 @snapend
 
 `creat()`システムコールは`open()`システムコールの特殊化と言っても良いでしょう.
@@ -415,7 +422,7 @@ int creat(const char* name, mode_t mode)
 
 ---
 @snap[north-west]
-`read()`システムコール
+@css[sub-title](`read()`システムコール)
 @snapend
 
 ```c++
@@ -434,7 +441,7 @@ ssize_t read(int fd, void *buf, size_t len);
 
 ---
 @snap[north-west]
-`ioctl()`システムコール
+@css[sub-title](`ioctl()`システムコール)
 @snapend
 
 ioctl関数の宣言部
@@ -449,7 +456,7 @@ ioctl関数の宣言部
 
 ---
 @snap[north-west]
-`ioctl()`システムコール
+@css[sub-title](`ioctl()`システムコール)
 @snapend
 
 `ioctl()`システムコールは特殊なI/O操作時に使用されるものです.
@@ -460,7 +467,7 @@ ioctl関数の宣言部
 
 ---
 @snap[north-west]
-`ioctl()`システムコール
+@css[sub-title](`ioctl()`システムコール)
 @snapend
 
 ```c++
@@ -470,13 +477,14 @@ ioctl(cdrom_fd, CDROMEJECT, 0);
 とすることで,デバイスのCDのイジェクトを要求することができます.
 
 ---
+@snap[north-west]
+@css[sub-title](`ioctl()`システムコール)
+@snapend
 
 このように,`ioctl()`を使用するときは,そのデバイスの操作マニュアルについて調べる必要があります.
 
 ---
-@snap[north]
-@size[3em](おわり)
-@snapend
+@css[finish](おわり)
 ---
 @snap[north]
 ### 参考資料
