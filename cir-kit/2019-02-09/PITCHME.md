@@ -7,9 +7,8 @@
 
 
 @snap[south span-50]
-@css[name](2019-02-09 田村 晃聖)
+@css[name]( 2019-02-09 田村 晃聖)
 @snapend
-
 ---
 @snap[north-west]
 @css[sub-title](はじめに)
@@ -450,7 +449,9 @@ ioctl関数の宣言部
 
 にて次のように宣言されています.
 
-`extern int ioctl (int __fd, unsigned long int __request, ...) __THROW;`
+```
+extern int ioctl (int __fd, unsigned long int __request, ...) __THROW;
+```
 
 ファイルディスクリプタを取り,ファイルへアクセスします.
 
