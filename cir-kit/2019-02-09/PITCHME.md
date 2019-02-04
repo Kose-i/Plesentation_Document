@@ -15,10 +15,12 @@
 @snapend
 
 @snap[north]
-## 私は,システムコールについて話します.
+私は,システムコールについて話します.
 @snapend
 
+@snap[center]
 システムコールって何？
+@snapend
 @snap[fragment]
 @fa[arrow-right]システムコールとは,OSが内蔵している基本的なルーチンを,アプリケーションで使うこと.特に基本的入出力を用いることをBIOSコールという.
 @snapend
