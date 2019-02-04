@@ -81,21 +81,21 @@
 @css[sub-title](はじめに)
 @snapend
 
-## `fifth_robot` `fourth_robot` の違い
+## `fifth_robot` `fourth_robot` のデバイス(モジュール)の違い
 
 |`fifth_robot`|`fourth_robot`|
 ---|---
-|`imu, 3DLider`|`2DLider`|
-|`ypspur`|`iMCs01, BLHD5100K`|
+|`3DLider`|`2DLider`|
+|`TF-2MD3-R6`|`iMCs01, BLHD5100K`|
 
 ---
 @snap[north-west]
 @css[sub-title](はじめに)
 @snapend
 
-### `motor-controller` を自分で管理する必要がありました.
+### `motor-controller` を自分で制御する必要がありました.
 
-四号機のモータコントローラ・ドライバの設定ファイルを調べることにしました.
+四号機のモータコントローラ・ドライバの制御ファイルを調べました.
 
 ---
 @snap[north-west]
@@ -140,7 +140,9 @@
 @css[sub-title](システムコールとは)
 @snapend
 
-### システムイメージ
+@snap[north]
+@size[2em](システムイメージ)
+@snapend
 
 ![system-image](cir-kit/2019-02-09/assets/img/system_kernel.png)
 
@@ -150,7 +152,9 @@
 @css[sub-title](システムコールとは)
 @snapend
 
-### システムコール
+@snap[north]
+システムコール
+@snapend
 
 - プロセス生成, 削除
 - メモリ確保, 開放
@@ -172,34 +176,78 @@
 
 inode番号は,ファイルのメタデータを内包しています.
 
-inode番号は一意なものです.inode番号はファイルに一意に作成されますが,固定されたものではありません.
-
-ファイルは最終アクセスしたファイルほど番号は大きくなります.
-
 ファイルのinode番号は`ls -i`で調べることができます.
 
-ハードリンクではinode番号は共有されます.ソフトリンク(シンボリックリンク)ではinode番号は共有されません.
+inode番号は一意なものです.inode番号はファイルに一意に作成されますが,固定されたものではありません.
 
-これについてはテストをしてみました.
+ファイルは最終アクセスしたファイルほど番号は大きくなります.(数が一定値を超えた場合,数字は循環する)
+
+これについてテストをしてみました.
+
++++
+@snap[north-west]
+@css[sub-title](システムコールとは)
+@snapend
+
+@[4,9]
+@[10,16]
+```c++
+$touch test1.txt test2.txt
+$touch test3.txt
+$ls -il
+ 1318502 -rw-rw-r-- 1 tamura-kosei tamura-kosei 0  2月  4 13:04 test1.txt
+ 1318504 -rw-rw-r-- 1 tamura-kosei tamura-kosei 0  2月  4 13:04 test2.txt
+ 1318505 -rw-rw-r-- 1 tamura-kosei tamura-kosei 0  2月  4 13:04 test3.txt
+
+$vi test1.txt <-[Hello]と打ち込む
+ 1318508 -rw-rw-r-- 1 tamura-kosei tamura-kosei 6  2月  4 13:05 test1.txt
+ 1318504 -rw-rw-r-- 1 tamura-kosei tamura-kosei 0  2月  4 13:04 test2.txt
+ 1318505 -rw-rw-r-- 1 tamura-kosei tamura-kosei 0  2月  4 13:04 test3.txt
+
+$echo "Hello" > test2.txt
+$ls -il
+ 1318508 -rw-rw-r-- 1 tamura-kosei tamura-kosei 6  2月  4 13:05 test1.txt
+ 1318504 -rw-rw-r-- 1 tamura-kosei tamura-kosei 6  2月  4 13:06 test2.txt
+ 1318505 -rw-rw-r-- 1 tamura-kosei tamura-kosei 0  2月  4 13:04 test3.txt
+```
 
 ---
 @snap[north-west]
 @css[sub-title](システムコールとは)
 @snapend
 
-ハードリンクされたファイルとハードリンクをしたファイルはinode番号が等しくなっています.
+ハードリンクではinode番号は共有されます.ソフトリンク(シンボリックリンク)ではinode番号は共有されません.
 
-ソフトリンクされたファイルとハードリンクをしたファイルはinode番号が等しくありません.
+これについてもテストをしてみました.
 
-@[3,6]
-@[4,5]
+---
+@snap[north-west]
+@css[sub-title](システムコールとは)
+@snapend
+
+ハードリンクされたファイルと,ハードリンクをしたファイルはinode番号が等しくなっています.
+
+ソフトリンクされたファイルと,ソフトリンクをしたファイルはinode番号が等しくありません.
+
+@[6,8]
+@[5,7]
 ```c++
-ls -li
+$touch soft-link-target.txt hard-link-target.txt
+$ln -s soft-link-target.txt soft-link-test.txt
+$ln hard-link-target.txt hard-link-test.txt
+$ls -li
+ 1318501  0 soft-link-target.txt
+ 1318503  0 hard-link-target.txt
+ 1318504 20 soft-link-test.txt -> soft-link-target.txt
+ 1318503  0 hard-link-test.txt
 
-1049558 soft-link-target.txt
-1049559 heard-link-target.txt
-1049559 heard-link-test.txt
-1049560 soft-link-test.txt -> soft-link-target.txt
+$vi soft-link-target.txt <-[Hello]と打ち込む
+$vi hard-link-target.txt <-[Hello]と打ち込む
+$ls -li
+ 1318508  6 soft-link-target.txt
+ 1318503  6 hard-link-target.txt
+ 1318504 20 soft-link-test.txt -> soft-link-target.txt
+ 1318503  6 hard-link-test.txt
 ```
 
 ---
