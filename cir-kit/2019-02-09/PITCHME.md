@@ -81,9 +81,9 @@
 @css[sub-title](はじめに)
 @snapend
 
-## `fifth_robot` `fourth_robot` のデバイス(モジュール)の違い
+## `五号機` `四号機` のデバイス(モジュール)の違い
 
-|`fifth_robot`|`fourth_robot`|
+|`五号機`|`四号機`|
 ---|---
 |`3DLider`|`2DLider`|
 |`TF-2MD3-R6`|`iMCs01, BLHD5100K`|
@@ -93,9 +93,13 @@
 @css[sub-title](はじめに)
 @snapend
 
-### `motor-controller` を自分で制御する必要がありました.
+@snap[center]
+### モータコントローラ を自分で制御する必要がありました.
+@snapend
 
+@snap[sourth]
 四号機のモータコントローラ・ドライバの制御ファイルを調べました.
+@snapend
 
 ---
 @snap[north-west]
