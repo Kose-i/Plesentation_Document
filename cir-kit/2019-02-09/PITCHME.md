@@ -10,13 +10,6 @@
 @css[name]( 2019-02-09 田村 晃聖)
 @snapend
 ---
-@css[first-size](0.1em)
-@css[second-size](0.3em)
-@css[third-size](0.5em)
-@css[fourth-size](0.8em)
-@css[fifth-size](1em)
-@size[1em](1em)
----
 @snap[north-west]
 @css[sub-title](はじめに)
 @snapend
@@ -151,8 +144,8 @@
 @css[sub-title](システムコールとは)
 @snapend
 
-@snap[north]
-@size[1.5em](システムイメージ)
+@snap[center]
+@size[1em](システムイメージ)
 @snapend
 
 ![system-image](cir-kit/2019-02-09/assets/img/system_kernel.png)
@@ -167,7 +160,7 @@
 システムコール
 @snapend
 
-@css[small-size](
+@size[0.5em](
 - プロセス生成, 削除
 - メモリ確保, 開放
 - プロセス間通信
@@ -274,7 +267,8 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 
 このシステムコールを利用することで,
 
-@css[small-size](- ファイルが存在するデバイスのデバイス番号
+@size[0.4em](
+- ファイルが存在するデバイスのデバイス番号
 - inode番号
 - パーミッション
 - ハードリンク数
