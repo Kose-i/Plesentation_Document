@@ -15,6 +15,7 @@
 @css[third-size](0.5em)
 @css[fourth-size](0.8em)
 @css[fifth-size](1em)
+@size[1em](1em)
 ---
 @snap[north-west]
 @css[sub-title](はじめに)
