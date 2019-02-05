@@ -11,6 +11,30 @@
 @snapend
 ---
 @snap[north-west]
+@css[sub-title](システムコールとは)
+@snapend
+
+inode番号を得る必要がある場合,`stat()`システムコールを利用して取得することができます.
+
+このシステムコールを利用することで,
+
+@size[0.4em](
+- ファイルが存在するデバイスのデバイス番号
+- inode番号
+- パーミッション
+- ハードリンク数
+- オーナユーザID
+- オーナグループID
+- ファイルサイズ(バイト数)
+- ファイルシステムI/Oのブロックサイズ
+- 使用しているブロック数
+- 最終アクセス時刻
+- 最終更新時刻
+- 最終情報変更時刻
+)
+---
+
+@snap[north-west]
 @css[sub-title](はじめに)
 @snapend
 
@@ -307,12 +331,14 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 
 ---
 @snap[north-west]
-@css[sub-title](`open()`システムコール)
+@css[sub-title](-open()システムコール)
 @snapend
 
+@snap[center]
 open()システムコールはファイルディスクリプタを返すシステムコール関数です.
 
 エラーが発生した場合には-1が返ります.
+@snapend
 
 ```c++
 #include <sys/types.h>
