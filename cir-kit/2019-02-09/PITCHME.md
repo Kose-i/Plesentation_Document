@@ -22,7 +22,7 @@
 システムコールって何？
 @snapend
 @snap[fragment]
-@fa[arrow-right]システムコールとは,OSが内蔵している基本的なルーチンを,アプリケーションで使うこと.特に基本的入出力を用いることをBIOSコールという.
+@fa[arrow-right]システムコールは標準出力やファイルに書き出すwrite,読み込むread,プロセスをフォークする機能などを持ち,Linuxでは約300個あります.
 @snapend
 
 ---
@@ -541,7 +541,7 @@ ioctl(cdrom_fd, CDROMEJECT, 0);
 ### 参考資料
 @snapend
 
-[最新パソコン・IT用語辞典](https://www.kinokuniya.co.jp/f/dsg-01-978477414174)
+[Linuxシステム実践入門](http://gihyo.jp/book/2013/978-4-7741-5813-6)
 
 [［試して理解］Linuxのしくみ～実験と図解で学ぶOSとハードウェアの基礎知識 実験プログラム](http://gihyo.jp/book/2018/978-4-7741-9607-7)
 
