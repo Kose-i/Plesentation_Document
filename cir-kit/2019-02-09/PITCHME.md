@@ -10,6 +10,12 @@
 @css[name]( 2019-02-09 田村 晃聖)
 @snapend
 ---
+@css[first-size](0.1em)
+@css[second-size](0.3em)
+@css[third-size](0.5em)
+@css[fourth-size](0.8em)
+@css[fifth-size](1em)
+---
 @snap[north-west]
 @css[sub-title](はじめに)
 @snapend
@@ -145,7 +151,7 @@
 @snapend
 
 @snap[north]
-@size[2em](システムイメージ)
+@size[1.5em](システムイメージ)
 @snapend
 
 ![system-image](cir-kit/2019-02-09/assets/img/system_kernel.png)
@@ -156,10 +162,11 @@
 @css[sub-title](システムコールとは)
 @snapend
 
-@snap[north]
+@snap[center]
 システムコール
 @snapend
 
+@css[small-size](
 - プロセス生成, 削除
 - メモリ確保, 開放
 - プロセス間通信
@@ -168,6 +175,7 @@
 - ファイル操作(デバイス操作)
 
 があります.
+)
 
 この中で私は,ファイルシステム操作, ファイル操作について話します.
 
@@ -176,7 +184,7 @@
 @css[sub-title](システムコールとは)
 @snapend
 
-@snap[span-30]
+@snap[center]
 ファイルアクセスにはinode番号を介して,ファイル情報を取得します.
 
 inode番号は,ファイルのメタデータを内包しています.
