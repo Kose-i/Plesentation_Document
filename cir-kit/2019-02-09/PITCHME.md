@@ -18,6 +18,7 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 
 このシステムコールを利用することで,
 
+@snap[center]
 @css[small-size](
 * ファイルが存在するデバイスのデバイス番号
 * inode番号
@@ -32,6 +33,7 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 * 最終更新時刻
 * 最終情報変更時刻
 )
+@snapend
 ---
 
 @snap[north-west]
@@ -180,10 +182,6 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 @css[sub-title](システムコールとは)
 @snapend
 
-@snap[center]
-システムコール
-@snapend
-
 @size[0.5em](
 - プロセス生成, 削除
 - メモリ確保, 開放
@@ -227,20 +225,20 @@ inode番号は一意なものです.inode番号はファイルに一意に作成
 $touch test1.txt test2.txt
 $touch test3.txt
 $ls -il
- 1318502 -rw-rw-r-- 1 tamura-kosei tamura-kosei 0  2月  4 13:04 test1.txt
- 1318504 -rw-rw-r-- 1 tamura-kosei tamura-kosei 0  2月  4 13:04 test2.txt
- 1318505 -rw-rw-r-- 1 tamura-kosei tamura-kosei 0  2月  4 13:04 test3.txt
+ 1318502 -rw-rw-r-- 1  0  2月  4 13:04 test1.txt
+ 1318504 -rw-rw-r-- 1  0  2月  4 13:04 test2.txt
+ 1318505 -rw-rw-r-- 1  0  2月  4 13:04 test3.txt
 
 $vi test1.txt <-[Hello]と打ち込む
- 1318508 -rw-rw-r-- 1 tamura-kosei tamura-kosei 6  2月  4 13:05 test1.txt
- 1318504 -rw-rw-r-- 1 tamura-kosei tamura-kosei 0  2月  4 13:04 test2.txt
- 1318505 -rw-rw-r-- 1 tamura-kosei tamura-kosei 0  2月  4 13:04 test3.txt
+ 1318508 -rw-rw-r-- 1  6  2月  4 13:05 test1.txt
+ 1318504 -rw-rw-r-- 1  0  2月  4 13:04 test2.txt
+ 1318505 -rw-rw-r-- 1  0  2月  4 13:04 test3.txt
 
 $echo "Hello" > test2.txt
 $ls -il
- 1318508 -rw-rw-r-- 1 tamura-kosei tamura-kosei 6  2月  4 13:05 test1.txt
- 1318504 -rw-rw-r-- 1 tamura-kosei tamura-kosei 6  2月  4 13:06 test2.txt
- 1318505 -rw-rw-r-- 1 tamura-kosei tamura-kosei 0  2月  4 13:04 test3.txt
+ 1318508 -rw-rw-r-- 1  6  2月  4 13:05 test1.txt
+ 1318504 -rw-rw-r-- 1  6  2月  4 13:06 test2.txt
+ 1318505 -rw-rw-r-- 1  0  2月  4 13:04 test3.txt
 ```
 
 ---
@@ -287,6 +285,7 @@ $ls -li
 @css[sub-title](システムコールとは)
 @snapend
 
+@snap[center]
 inode番号を得る必要がある場合,`stat()`システムコールを利用して取得することができます.
 
 このシステムコールを利用することで,
@@ -305,6 +304,7 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 - 最終更新時刻
 - 最終情報変更時刻
 )
+@snapend
 
 ---
 @snap[north-west]
@@ -331,11 +331,11 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 
 ---
 @snap[north-west]
-@css[sub-title](-open()システムコール)
+@css[sub-title](`open()`システムコール)
 @snapend
 
 @snap[center]
-open()システムコールはファイルディスクリプタを返すシステムコール関数です.
+`open()`システムコールはファイルディスクリプタを返すシステムコール関数です.
 
 エラーが発生した場合には-1が返ります.
 @snapend
@@ -354,7 +354,7 @@ int open(const char *name, int flags, mode_t mode);
 
 ---
 @snap[north-west]
-@css[sub-title](`open()`システムコール)
+@css[sub-title]('open()'システムコール)
 @snapend
 
 flagsにはO_RDONLY, O_WRONLY, O_RDWRを指定します.
@@ -366,51 +366,51 @@ flagsにはO_RDONLY, O_WRONLY, O_RDWRを指定します.
 @css[sub-title](`open()`システムコール)
 @snapend
 
-O_APPEND
-- ファイルを追加書きモード
+O_APPEND<br/>
+ファイルを追加書きモード
 
-O_ASYNC
-- ファイルが端末またはソケット時にシグナルを発生させます.
+O_ASYNC<br/>
+ファイルが端末またはソケット時にシグナルを発生させます.
 
-O_CREAT
-- 指定されたファイルがないときに,新たに作成します.
+O_CREAT<br/>
+指定されたファイルがないときに,新たに作成します.
 
-O_DIRECT
-- ダイレクトI/O用にファイルを開く.
-
----
-@snap[north-west]
-@css[sub-title](`open()`システムコール)
-@snapend
-
-O_DIRECTORY
-- nameがディレクトリでない場合はエラーを返します.
-
-O_EXCL
-- nameの名前が存在していた場合エラーを返します.
-
-O_LARGEFILE
-- サイズが2G以上のファイルを開くときに指定します.64ビットアーキテクチャの場合デフォルトで設定されます.
-
-O_NOCTTY
-- nameが端末を指す場合に,プロセスの制御端末にしません.
+O_DIRECT<br/>
+ダイレクトI/O用にファイルを開く.
 
 ---
 @snap[north-west]
 @css[sub-title](`open()`システムコール)
 @snapend
 
-O_NOFOLLOW
-- nameがシンボリックリンクのときにエラーを返します.
+O_DIRECTORY<br/>
+nameがディレクトリでない場合はエラーを返します.
 
-O_NONBLOCK
-- ファイルをノンブロックモードで開きます.
+O_EXCL<br/>
+nameの名前が存在していた場合エラーを返します.
 
-O_SYNC
-- 同期I/O用にファイルを開きます.
+O_LARGEFILE<br/>
+サイズが2G以上のファイルを開くときに指定します.64ビットアーキテクチャの場合デフォルトで設定されます.
 
-O_TRUNC
-- ファイルがすでに存在し,かつ書き込み用のフラグを与えられているとき,ファイルをトランケートします.
+O_NOCTTY<br/>
+nameが端末を指す場合に,プロセスの制御端末にしません.
+
+---
+@snap[north-west]
+@css[sub-title](`open()`システムコール)
+@snapend
+
+O_NOFOLLOW<br/>
+nameがシンボリックリンクのときにエラーを返します.
+
+O_NONBLOCK<br/>
+ファイルをノンブロックモードで開きます.
+
+O_SYNC<br/>
+I/O用にファイルを開きます.
+
+O_TRUNC<br/>
+がすでに存在し,かつ書き込み用のフラグを与えられているとき,ファイルをトランケートします.
 
 
 ---
@@ -427,63 +427,51 @@ modeはパーミッションを指定できます
 @css[sub-title](`open()`システムコール)
 @snapend
 
-S_IRWXU
+S_IRWXU<br/>
+rwx --- ---
 
-- rwx --- ---
+S_IRUSR<br/>
+r-- --- ---
 
-S_IRUSR
+S_IWUSR<br/>
+-w- --- ---
 
-- r-- --- ---
-
-S_IWUSR
-
-- -w- --- ---
-
-S_IXUSR
-
-- --x --- ---
+S_IXUSR<br/>
+--x --- ---
 
 ---
 @snap[north-west]
 @css[sub-title](`open()`システムコール)
 @snapend
 
-S_IRWXG
+S_IRWXG<br/>
+--- rwx ---
 
-- --- rwx ---
+S_IRGRP<br/>
+--- r-- ---
 
-S_IRGRP
+S_IWGRP<br/>
+--- -w- ---
 
-- --- r-- ---
-
-S_IWGRP
-
-- --- -w- ---
-
-S_IXGRP
-
-- --- --x ---
+S_IXGRP<br/>
+--- --x ---
 
 ---
 @snap[north-west]
 @css[sub-title](`open()`システムコール)
 @snapend
 
-S_IRWXO
- 
-- --- --- rwx
+S_IRWXO<br/>
+--- --- rwx
 
-S_IROTH
+S_IROTH<br/>
+--- --- r--
 
-- --- --- r--
+S_IWOTH<br/>
+--- --- -w-
 
-S_IWOTH
-
-- --- --- -w-
-
-S_IXOTH
-
-- --- --- --x
+S_IXOTH<br/>
+--- --- --x
 
 ---
 @snap[north-west]
