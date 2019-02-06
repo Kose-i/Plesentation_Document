@@ -18,7 +18,7 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 
 このシステムコールを利用することで,
 
-@snap[midpoint]
+@snap[center]
   @size[0.5em](ファイルが存在するデバイスのデバイス番号<br/>)
   @size[0.5em](inode番号<br/>)
   @size[0.5em](パーミッション<br/>)
@@ -39,7 +39,7 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 私は,システムコールについて話します.
 @snapend
 
-@snap[midpoint]
+@snap[center]
 システムコールって何？
 @snapend
 @snap[fragment]
@@ -114,7 +114,7 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 @css[sub-title](はじめに)
 @snapend
 
-@snap[midpoint]
+@snap[center]
 ### モータコントローラ を自分で制御する必要がありました.
 @snapend
 
@@ -165,7 +165,7 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 @css[sub-title](システムコールとは)
 @snapend
 
-@snap[midpoint]
+@snap[center]
 @size[1em](システムイメージ)
 @snapend
 
@@ -195,7 +195,7 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 @css[sub-title](システムコールとは)
 @snapend
 
-@snap[midpoint]
+@snap[center]
 ファイルアクセスにはinode番号を介して,ファイル情報を取得します.
 
 inode番号は,ファイルのメタデータを内包しています.
@@ -280,7 +280,7 @@ $ls -li
 @css[sub-title](システムコールとは)
 @snapend
 
-@snap[midpoint]
+@snap[center]
 inode番号を得る必要がある場合,`stat()`システムコールを利用して取得することができます.
 
 このシステムコールを利用することで,
@@ -329,7 +329,7 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 @css[sub-title](`open()`システムコール)
 @snapend
 
-@snap[midpoint]
+@snap[center]
 `open()`システムコールはファイルディスクリプタを返すシステムコール関数です.
 
 エラーが発生した場合には-1が返ります.
