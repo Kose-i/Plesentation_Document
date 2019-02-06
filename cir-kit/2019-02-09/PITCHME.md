@@ -326,11 +326,11 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 
 ---
 @snap[north-west]
-@css[sub-title](open()システムコール)
+@css[sub-title](openシステムコール)
 @snapend
 
 @snap[center]
-open()システムコールはファイルディスクリプタを返すシステムコール関数です.
+openシステムコールはファイルディスクリプタを返すシステムコール関数です.
 
 エラーが発生した場合には-1が返ります.
 @snapend
@@ -349,7 +349,7 @@ int open(const char *name, int flags, mode_t mode);
 
 ---
 @snap[north-west]
-@css[sub-title](open()システムコール)
+@css[sub-title](openシステムコール)
 @snapend
 
 flagsにはO_RDONLY, O_WRONLY, O_RDWRを指定します.
@@ -358,7 +358,7 @@ flagsにはO_RDONLY, O_WRONLY, O_RDWRを指定します.
 
 ---
 @snap[north-west]
-@css[sub-title](open()システムコール)
+@css[sub-title](openシステムコール)
 @snapend
 
 O_APPEND<br/>
@@ -375,7 +375,7 @@ O_DIRECT<br/>
 
 ---
 @snap[north-west]
-@css[sub-title](open()システムコール)
+@css[sub-title](openシステムコール)
 @snapend
 
 O_DIRECTORY<br/>
@@ -392,7 +392,7 @@ O_NOCTTY<br/>
 
 ---
 @snap[north-west]
-@css[sub-title](open()システムコール)
+@css[sub-title](openシステムコール)
 @snapend
 
 O_NOFOLLOW<br/>
@@ -410,7 +410,7 @@ O_TRUNC<br/>
 
 ---
 @snap[north-west]
-@css[sub-title](open()システムコール)
+@css[sub-title](openシステムコール)
 @snapend
 
 modeはパーミッションを指定できます
@@ -419,7 +419,7 @@ modeはパーミッションを指定できます
 
 ---
 @snap[north-west]
-@css[sub-title](open()システムコール)
+@css[sub-title](openシステムコール)
 @snapend
 
 S_IRWXU<br/>
@@ -436,7 +436,7 @@ S_IXUSR<br/>
 
 ---
 @snap[north-west]
-@css[sub-title](open()システムコール)
+@css[sub-title](openシステムコール)
 @snapend
 
 S_IRWXG<br/>
@@ -453,7 +453,7 @@ S_IXGRP<br/>
 
 ---
 @snap[north-west]
-@css[sub-title](open()システムコール)
+@css[sub-title](openシステムコール)
 @snapend
 
 S_IRWXO<br/>
@@ -470,10 +470,10 @@ S_IXOTH<br/>
 
 ---
 @snap[north-west]
-@css[sub-title](`creat()`システムコール)
+@css[sub-title](creatシステムコール)
 @snapend
 
-`creat()`システムコールは`open()`システムコールの特殊化と言っても良いでしょう.
+creat()システムコールはopen()システムコールの特殊化と言っても良いでしょう.
 
 ```c++
 int creat(const char* name, mode_t mode);
@@ -489,7 +489,7 @@ int creat(const char* name, mode_t mode)
 
 ---
 @snap[north-west]
-@css[sub-title](`read()`システムコール)
+@css[sub-title](readシステムコール)
 @snapend
 
 ```c++
@@ -508,12 +508,12 @@ ssize_t read(int fd, void *buf, size_t len);
 
 ---
 @snap[north-west]
-@css[sub-title](`ioctl()`システムコール)
+@css[sub-title](ioctlシステムコール)
 @snapend
 
 ioctl関数の宣言部
 
-```#include < sys/ioctl.h >```
+`#include < sys/ioctl.h >`
 
 にて次のように宣言されています.
 
@@ -525,10 +525,10 @@ extern int ioctl (int __fd, unsigned long int __request, ...) __THROW;
 
 ---
 @snap[north-west]
-@css[sub-title](`ioctl()`システムコール)
+@css[sub-title](ioctlシステムコール)
 @snapend
 
-`ioctl()`システムコールは特殊なI/O操作時に使用されるものです.
+ioctlシステムコールは特殊なI/O操作時に使用されるものです.
 
 シリアルポートとのデータ受送信などに使用されます.
 
@@ -536,7 +536,7 @@ extern int ioctl (int __fd, unsigned long int __request, ...) __THROW;
 
 ---
 @snap[north-west]
-@css[sub-title](`ioctl()`システムコール)
+@css[sub-title](ioctlシステムコール)
 @snapend
 
 ```c++
@@ -547,7 +547,7 @@ ioctl(cdrom_fd, CDROMEJECT, 0);
 
 ---
 @snap[north-west]
-@css[sub-title](`ioctl()`システムコール)
+@css[sub-title](ioctlシステムコール)
 @snapend
 
 このように,`ioctl()`を使用するときは,そのデバイスの操作マニュアルについて調べる必要があります.
