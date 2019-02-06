@@ -16,8 +16,6 @@
 
 inode番号を得る必要がある場合,`stat()`システムコールを利用して取得することができます.
 
-このシステムコールを利用することで,
-
 @snap[center]
   @size[0.5em](ファイルが存在するデバイスのデバイス番号<br/>)
   @size[0.5em](inode番号<br/>)
@@ -328,11 +326,11 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 
 ---
 @snap[north-west]
-@css[sub-title](`open()`システムコール)
+@css[sub-title](open()システムコール)
 @snapend
 
 @snap[center]
-`open()`システムコールはファイルディスクリプタを返すシステムコール関数です.
+open()システムコールはファイルディスクリプタを返すシステムコール関数です.
 
 エラーが発生した場合には-1が返ります.
 @snapend
@@ -351,7 +349,7 @@ int open(const char *name, int flags, mode_t mode);
 
 ---
 @snap[north-west]
-@css[sub-title]('open()'システムコール)
+@css[sub-title](open()システムコール)
 @snapend
 
 flagsにはO_RDONLY, O_WRONLY, O_RDWRを指定します.
@@ -360,7 +358,7 @@ flagsにはO_RDONLY, O_WRONLY, O_RDWRを指定します.
 
 ---
 @snap[north-west]
-@css[sub-title](`open()`システムコール)
+@css[sub-title](open()システムコール)
 @snapend
 
 O_APPEND<br/>
@@ -377,7 +375,7 @@ O_DIRECT<br/>
 
 ---
 @snap[north-west]
-@css[sub-title](`open()`システムコール)
+@css[sub-title](open()システムコール)
 @snapend
 
 O_DIRECTORY<br/>
@@ -394,7 +392,7 @@ O_NOCTTY<br/>
 
 ---
 @snap[north-west]
-@css[sub-title](`open()`システムコール)
+@css[sub-title](open()システムコール)
 @snapend
 
 O_NOFOLLOW<br/>
@@ -412,7 +410,7 @@ O_TRUNC<br/>
 
 ---
 @snap[north-west]
-@css[sub-title](`open()`システムコール)
+@css[sub-title](open()システムコール)
 @snapend
 
 modeはパーミッションを指定できます
@@ -421,7 +419,7 @@ modeはパーミッションを指定できます
 
 ---
 @snap[north-west]
-@css[sub-title](`open()`システムコール)
+@css[sub-title](open()システムコール)
 @snapend
 
 S_IRWXU<br/>
@@ -438,7 +436,7 @@ S_IXUSR<br/>
 
 ---
 @snap[north-west]
-@css[sub-title](`open()`システムコール)
+@css[sub-title](open()システムコール)
 @snapend
 
 S_IRWXG<br/>
@@ -455,7 +453,7 @@ S_IXGRP<br/>
 
 ---
 @snap[north-west]
-@css[sub-title](`open()`システムコール)
+@css[sub-title](open()システムコール)
 @snapend
 
 S_IRWXO<br/>
@@ -515,7 +513,7 @@ ssize_t read(int fd, void *buf, size_t len);
 
 ioctl関数の宣言部
 
-`#include < sys/ioctl.h >`
+```#include < sys/ioctl.h >```
 
 にて次のように宣言されています.
 
