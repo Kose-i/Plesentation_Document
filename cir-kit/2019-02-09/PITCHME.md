@@ -508,6 +508,26 @@ ssize_t read(int fd, void *buf, size_t len);
 
 ---
 @snap[north-west]
+@css[sub-title](writeシステムコール)
+@snapend
+
+```
+#include <unistd.h>
+
+ssize_t write(int fd, const void *buf, size_t count);
+```
+
+writeはbuf内のcountバイト数分のデータをファイルのカレントポジションへ書き込みます.
+
+書き込みに成功すると書き込んだバイト数を返しファイルカレントポジションを進めます.
+
+失敗した場合,-1を返します.
+---
+@snap[north-west]
+@css[sub-title](writeシステムコール)
+@snapend
+---
+@snap[north-west]
 @css[sub-title](ioctlシステムコール)
 @snapend
 
@@ -550,10 +570,27 @@ ioctl(cdrom_fd, CDROMEJECT, 0);
 @css[sub-title](ioctlシステムコール)
 @snapend
 
-このように,`ioctl()`を使用するときは,そのデバイスの操作マニュアルについて調べる必要があります.
+```c++
+ioctl(uinput_fd, UI_SET_EVBIT,EV_REL) < 0)
+ioctl(uinput_fd, UI_SET_RELBIT,REL_X) < 0)
+ioctl(uinput_fd, UI_SET_RELBIT,REL_Y) < 0)
+ioctl(uinput_fd, UI_SET_EVBIT,EV_KEY) < 0)
+ioctl(uinput_fd, UI_SET_KEYBIT,BTN_LEFT) < 0)
+
+```
+
+とuinput_fdのメタ情報を設定し,writeを使用することで,マウスを自動化させることもできます.
+---
+@snap[north-west]
+@css[sub-title](ioctlシステムコール)
+@snapend
+
+このように, ioctl() を使用するときは,そのデバイスについて調べる必要があります.
 
 ---
+@snap[midpoint]
 @css[finish](おわり)
+@snapend
 ---
 @snap[north]
 ### 参考資料
