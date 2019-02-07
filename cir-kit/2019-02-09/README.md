@@ -10,4 +10,6 @@
 
 [Linuxシステムプログラミング](https://www.oreilly.co.jp/books/9784873113623/)
 
-[satoru-takeuchi/github](https://github.com/satoru-takeuchi/linux-in-practice)
+[satoru-takeuchi-github](https://github.com/satoru-takeuchi/linux-in-practice)
+
+[Linux の入力デバイスをカスタマイズ-Qiita](https://qiita.com/propella/items/a73fc333c95d14d06835)
