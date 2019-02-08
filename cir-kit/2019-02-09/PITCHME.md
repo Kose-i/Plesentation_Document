@@ -57,7 +57,7 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 
 
 @snap[fragment]
-四号機 の制御方法に深く関わっているためです.
+四号機 の制御方法に関わっているためです.
 @snapend
 
 ---
@@ -117,7 +117,7 @@ inode番号を得る必要がある場合,`stat()`システムコールを利用
 @snapend
 
 @snap[sourth]
-四号機のモータコントローラ・ドライバの制御ファイルを調べました.
+四号機のモータコントローラの制御ファイルを調べました.
 @snapend
 
 ---
@@ -462,7 +462,7 @@ S_IXOTH<br/>
 @css[sub-title](creatシステムコール)
 @snapend
 
-creat()システムコールはopen()システムコールの特殊化と言っても良いでしょう.
+creat()システムコールはopen()システムコールの特殊化です.
 
 ```c++
 int creat(const char* name, mode_t mode);
@@ -489,7 +489,7 @@ ssize_t read(int fd, void *buf, size_t len);
 
 ここで引数のlenはバイト数を与えます.
 
-ファイルディスクリプタを与え,lenバイトbufに読み込みます.
+ファイルディスクリプタを与え,lenバイト分 buf に読み込みます.
 
 受け取ったバイト数を返します.エラーが発生した場合は-1が返ります.
 
@@ -523,7 +523,7 @@ ioctl関数の宣言部
 にて次のように宣言されています.
 
 ```
-extern int ioctl (int __fd, unsigned long int __request, ...) __THROW;
+int ioctl(int fd, unsigned long int request, ...);
 ```
 
 ファイルディスクリプタを取り,ファイルへアクセスします.
@@ -564,7 +564,7 @@ ioctl(uinput_fd, UI_SET_KEYBIT,BTN_LEFT) < 0)
 
 ```
 
-とuinput_fdのメタ情報を設定し,writeを使用することで,マウスを自動化させることもできます.
+とuinput_fdのメタ情報を設定し,writeを使用することで,マウスカーソルを制御することもできます.
 ---
 @snap[north-west]
 @css[sub-title](ioctlシステムコール)
