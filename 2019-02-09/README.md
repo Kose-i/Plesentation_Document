@@ -1,6 +1,6 @@
 # テーマ:システムコール関数
 ## by: Kose-i
-[Plesentation](https://gitpitch.com/Kose-i/Plesentation_Document?p=cir-kit/2019-02-09/)
+[Plesentation](https://gitpitch.com/Kose-i/Plesentation_Document?p=2019-02-09/)
 
 ### 参考資料
 
