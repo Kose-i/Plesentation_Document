@@ -1,47 +1,18 @@
 
-@css[top-title](<b>ROS</b> から <b>ROS2</b> へ)
+@css[top-title](強化学習の覚書)
 
 @css[top-name](2019-04-13 田村　晃聖)
 
 ---
 @title[](はじめに)
 
-- install
-- msg
-- srv
-- action
-- tf
+強化学習とは,機械学習の１分野です.
+
+強化学習では,教師あり学習と教師なし学習の中間的なもので,教師データが一部分でしか与えられません.
+
+そのため,ボードゲームやロボットの歩行などで使用されます.
 
 ---
-@title[](install)
----
-@title[](install)
----
-@title[](install)
----
-@title[](msg)
----
-@title[](msg)
----
-@title[](msg)
----
-@title[](srv)
----
-@title[](srv)
----
-@title[](srv)
----
-@title[](action)
----
-@title[](action)
----
-@title[](action)
----
-@title[](tf)
----
-@title[](tf)
----
-@title[](tf)
----
-@title[](tf)
+@title[UCB1-algorithm]()
+
 ---

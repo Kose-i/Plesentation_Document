@@ -1,1 +1,11 @@
-title
+theme : sky
+
+theme-override: cir-kit/2019-02-09/assets/css/PITCHME.css
+
+title: "システムコールについて"
+
+slide-number: true
+
+footnote: "2019-02-09 tamura"
+
+highlight: monokai

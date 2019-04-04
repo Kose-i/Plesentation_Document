@@ -4,4 +4,4 @@
 
 [システムコールについて](https://gitpitch.com/Kose-i/Plesentation_Document?p=2019-02-09/)
 
-[ROS2に移行するに当たって](https://gitpitch.com/Kose-i/Plesentation_Document?p=2019-04-13/)
+[強化学習のスタート](https://gitpitch.com/Kose-i/Plesentation_Document?p=2019-04-13/)
