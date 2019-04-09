@@ -1,6 +1,7 @@
 theme : sky
 
-theme-override: 2019-04-13/assets/css/PITCHME.css
+#theme-override: 2019-04-13/assets/css/PITCHME.css
+theme-override: 2019-02-09/assets/css/PITCHME.css
 
 title: "強化学習について"
 
