@@ -1,11 +1,11 @@
 theme : sky
 
-theme-override: cir-kit/2019-02-09/assets/css/PITCHME.css
+theme-override: cir-kit/2019-04-13/assets/css/PITCHME.css
 
-title: "システムコールについて"
+title: "強化学習について"
 
 slide-number: true
 
-footnote: "2019-02-09 tamura"
+footnote: "2019-04-13 tamura"
 
 highlight: monokai
