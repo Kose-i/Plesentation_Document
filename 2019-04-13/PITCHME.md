@@ -3,6 +3,20 @@
 
 @css[top-name](2019-04-13 田村　晃聖)
 
+
+---
+@title[Introduction]
+
+@snap[north span-100]
+@css[main-title](システムコールについて)
+@snapend
+---
+
+
+
+@snap[south span-50]
+@css[name]( 2019-02-09 田村 晃聖)
+@snapend
 ---
 @title[start](はじめに)
 
