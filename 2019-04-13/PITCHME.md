@@ -1,11 +1,11 @@
-@css[Introduction]
+@title[Introduction]
 
 @snap[north span-100]
-@css[top-title](強化学習の覚書)
+@css[main-title](強化学習の覚書)
 @snapend
 
 @snap[south span-50]
-@css[top-name](2019-04-13 田村　晃聖)
+@css[name](2019-04-13 田村　晃聖)
 @snapend
 
 ---
