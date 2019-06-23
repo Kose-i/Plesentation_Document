@@ -1,5 +1,4 @@
-# ROS2
+# 確率ロボティクス
 
-[ROS2-home](https://index.ros.org/doc/ros2/)
 
-[ROS2-githubpage](https://github.com/ros2)
+[確率ロボティクス](https://ci.nii.ac.jp/ncid/BA83605727)
