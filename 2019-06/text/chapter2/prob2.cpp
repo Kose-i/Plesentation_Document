@@ -8,70 +8,52 @@ enum class Weather {
   rainy
 };
 
+using Weather_Ltree = std::pair<Weather, double>;
 class WeatherReport {
+  private:
+    Weather now_weather;
+    std::vector<std::vector<double>> weather_parcent{{0.8, 0.2, 0.0}, {0.4, 0.4, 0.2}, {0.2, 0.6, 0.2}};
   public:
-    using LTree = std::pair<WeatherReport, double>;
-    virtual std::pair<WeatherReport, double> next_weather(const Weather&);
+    Weather_Ltree next_weather(const Weather&);
+    WeatherReport(const Weather&);
 };
 
-class SunnyDayReport:WeatherReport{
-  public:
-    virtual std::pair<WeatherReport, double> next_weather(const Weather&);
-};
-class CloudyDayReport:WeatherReport{
-  public:
-    virtual std::pair<WeatherReport, double> next_weather(const Weather&);
-};
-class RainyDayReport:WeatherReport{
-  public:
-    virtual std::pair<WeatherReport, double> next_weather(const Weather&);
-};
-
-
-std::pair<WeatherReport, double> SunnyDayReport::next_weather(const Weather& t) {
-  LTree k;
-  if (t == Weather::sunny) {
-    SunnyDayReport j;
-    k.first = j;
-    k.second = 0.8;
-    return k;
-  } else if (t == Weather::cloudy) {
-    CloudyDayReport j;
-    k.first = j;
-    k.second = 0.2;
-    return k;
-  } else {
-    k.first = RainyDayReport();
-    k.second = 0.0;
-    return k;
+WeatherReport::WeatherReport(const Weather& now) :now_weather(now){}
+Weather_Ltree WeatherReport::next_weather(const Weather& next_weather) {
+  int t = 0;
+  switch (now_weather) {
+    case Weather::sunny:
+      t = 0;
+      break;
+    case Weather::cloudy:
+      t = 1;
+      break;
+    case Weather::rainy:
+      t = 2;
+      break;
   }
-}
-std::pair<WeatherReport, double> CloudyDayReport::next_weather(const Weather& t) {
-  if (t == Weather::sunny) {
-    return std::pair<WeatherReport, double>(SunnyDayReport, 0.4);
-  } else if (t == Weather::cloudy) {
-    return std::pair<WeatherReport, double>(CloudyDayReport, 0.4);
-  } else {
-    return std::pair<WeatherReport, double>(RainyDayReport, 0.2);
-  }
-}
-std::pair<WeatherReport, double> RainyDayReport::next_weather(const Weather& t) {
-  if (t == Weather::sunny) {
-    return std::pair<WeatherReport, double>(SunnyDayReport, 0.2);
-  } else if (t == Weather::cloudy) {
-    return std::pair<WeatherReport, double>(CloudyDayReport, 0.6);
-  } else {
-    return std::pair<WeatherReport, double>(RainyDayReport, 0.2);
-  }
-}
+  now_weather = next_weather;
 
+  if (next_weather == Weather::sunny) {
+    return std::make_pair(Weather::sunny, weather_parcent[t][0]);
+  } else if (next_weather == Weather::cloudy) {
+    return std::make_pair(Weather::cloudy, weather_parcent[t][1]);
+  } else {
+    return std::make_pair(Weather::rainy, weather_parcent[t][2]);
+  }
+};
 
 double prob_a() {
-  WeatherReport DAY = SunnyDayReport();
-  for (auto i = 0;i < 3;++i) {
-  }
-  return 1.0;
+  WeatherReport DAY(Weather::sunny);
+  double sum = 1.0;
+  Weather_Ltree t = DAY.next_weather(Weather::cloudy);
+  sum *= t.second;
+  t = DAY.next_weather(Weather::cloudy);
+  sum *= t.second;
+  t = DAY.next_weather(Weather::rainy);
+  sum *= t.second;
+  return sum;
 }
 int main(int argc, char** argv) {
-  std::cout << prob_a();
+  std::cout << prob_a() << '\n';
 }
