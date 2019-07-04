@@ -21,7 +21,7 @@ This is test Latex
 
 `latex test.tex`
 
-`dvipdfmx test.dvi'
+`dvipdfmx test.dvi`
 
 ## 参考
 
