@@ -1,8 +1,6 @@
 \documentclass[12pt]{jsarticle}
 \begin{document}
-\beginsection
 Kalmanfilterはガウス分布と線形性が成り立つと仮定されている
-\endsection
 
 
 ベイズ則は,次の式で表される.
@@ -15,10 +13,21 @@ Kalmanfilterはガウス分布と線形性が成り立つと仮定されてい�
  P(z_i,_t){t_i}
 \end{equation}
 
-\book{foo,
+また確率の基本法則として
+
+加法定理
+\begin{equation}
+  P(X)=\sigma{1}{p(X,Y)}
+\end{equation}
+
+乗法定理
+\begin{equation}
+  P(X,Y)=p(Y|X)p(X)
+\end{equation}
+
+@book{foo,
   author="Donald E. Knuth",
   title="Searching and Sorting",
   publisher="Addison-Wesley",
-  year="1972"
-}
+  year="1972"}
 \end{document}
