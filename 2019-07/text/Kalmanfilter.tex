@@ -2,6 +2,10 @@
 \begin{document}
 Kalmanfilterはガウス分布と線形性が成り立つと仮定されている
 
+またモデルについて
+\begin{equation}
+  X_t=K_xX_{t-1}
+\end{equation}
 
 ベイズ則は,次の式で表される.
 
@@ -25,9 +29,7 @@ Kalmanfilterはガウス分布と線形性が成り立つと仮定されてい�
   P(X,Y)=p(Y|X)p(X)
 \end{equation}
 
-@book{foo,
-  author="Donald E. Knuth",
-  title="Searching and Sorting",
-  publisher="Addison-Wesley",
-  year="1972"}
+\begin{thebibliography}{9}
+  \bibitem{ProbablityRobotics}Sebastian Thrun, Wolfram Burgard, Dieter Fox, "確率ロボティクス", 2015,マイナビ出版 
+\end{thebibliography}
 \end{document}
