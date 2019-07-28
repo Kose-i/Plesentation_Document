@@ -37,7 +37,6 @@ Kalmanfilterはガウス分布と線形性が成り立つと仮定されてい�
 3. 初期信念$bel(x_0)$が正規分布
 
 \begin{lstlisting}[basicstyle=\ttfamily\footnotesize, frame=single]
-\begin{equation}
 
 algorithm Kalman_filter(\mu_{t-1}, \Sigma_{t-1}, u_t, z_t):
 
@@ -52,11 +51,12 @@ algorithm Kalman_filter(\mu_{t-1}, \Sigma_{t-1}, u_t, z_t):
   \Sigma_t = (I-K_tC_t)\bar{\Sigma_t}
 
   return   \mu_t, \Sigma_t
-\end{equation}
+
 \end{lstlisting}
 
 \begin{thebibliography}{9}
   \bibitem{ProbablityRobotics}Sebastian Thrun, Wolfram Burgard, Dieter Fox, "確率ロボティクス", 2015,マイナビ出版 
   \bibitem{基礎からわかる時系列分析},萩原 淳一郎,瓜生 真也,牧山 幸史,石田 基広 , "基礎からわかる時系列分析", 2018, Data Science Library
 \end{thebibliography}
+
 \end{document}
