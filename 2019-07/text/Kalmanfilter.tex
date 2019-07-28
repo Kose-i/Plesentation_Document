@@ -1,11 +1,7 @@
 \documentclass[12pt]{jsarticle}
+\usepackage{listings}
 \begin{document}
-Kalmanfilterはガウス分布と線形性が成り立つと仮定されている
-
-またモデルについて
-\begin{equation}
-  X_t=K_xX_{t-1}
-\end{equation}
+確率の前提知識
 
 ベイズ則は,次の式で表される.
 
@@ -21,13 +17,43 @@ Kalmanfilterはガウス分布と線形性が成り立つと仮定されてい�
 
 加法定理
 \begin{equation}
-  P(X)=\sigma{1}{p(X,Y)}
+  P(X)=\sum_{Y}^{}{p(X,Y)}
 \end{equation}
 
 乗法定理
 \begin{equation}
   P(X,Y)=p(Y|X)p(X)
 \end{equation}
+
+
+Kalmanfilterはガウス分布と線形性が成り立つと仮定されている
+
+信念belは平均$\mu_t$と共分散$\Sigma_t$で表され,マルコフ性と次の３つの条件で,事後信念はガウス分布となる.
+
+1. 状態遷移確率$p(x_t|u_t,x_{t-1})$が,ガウス雑音を足した線形関数
+
+2. 計測確率$p(z_t|x_t)$も線形であり,その雑音はガウス雑音
+
+3. 初期信念$bel(x_0)$が正規分布
+
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize, frame=single]
+\begin{equation}
+
+algorithm Kalman_filter(\mu_{t-1}, \Sigma_{t-1}, u_t, z_t):
+
+  \bar{\mu_t} = A_t\mu_{t-1}+B_tu_t
+
+  \bar{\Sigma_t} = A_t\Sigma_{t-1}A_t^T+R_t
+
+  K_t = \bar{\Sigma_t}C_t^T(C_t\bar{\Sigma_t}C_t^T+Q_t)^{-1}
+
+  \mu_t = \bar{\mu_t}+K_t(z_t-C_t\bar{\mu_t})
+
+  \Sigma_t = (I-K_tC_t)\bar{\Sigma_t}
+
+  return   \mu_t, \Sigma_t
+\end{equation}
+\end{lstlisting}
 
 \begin{thebibliography}{9}
   \bibitem{ProbablityRobotics}Sebastian Thrun, Wolfram Burgard, Dieter Fox, "確率ロボティクス", 2015,マイナビ出版 
