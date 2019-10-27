@@ -1,0 +1,51 @@
+\documentclass[12pt]{jsarticle}
+
+\usepackage{amsmath}
+
+%\editor{tamura-kosei}
+
+\begin{document}
+
+\section{特異値分解(Singular Value Decomposition;SVD)}
+\begin{equation}
+  \label{A=USV}
+  A = U \Sigma V
+\end{equation}
+ここで$A$を$m×m$行列で，$U$は$m×m$直交行列，$\Sigma$は$m×n$行列，$V$は$n×n$直交行列である．
+$D$は対角行列であり，$d_i^*$を行列$A$の特異値とすると，
+\begin{equation}
+  \label{D_diag}
+  D = diag(d_1^*, d_2^*, ..., d_n^*)
+\end{equation}
+とかける．
+特異値とは，
+
+特異値分解の性質
+\begin{itemize}
+  \item $A$が与えられたとき，特異値を定める行列$Σ$は一意に決まりますが，直交行列$U$,$V$は一意に定まるとは限りません。
+  \item 行列の（0 でない）特異値の数は，その行列のランクと一致します。
+  \item 行列の特異値の二乗和はその行列の全成分の二乗和と等しいです。先ほどの具体例ではどちらも24になっています。この値の平方根を行列のフロベニウスノルムと言います。
+  \item $A$が対称行列のとき，$A$の固有値と特異値は一致します。対称行列は直交行列で対角化できるからです。
+  \item $A^TA$ の 0 でない固有値の正の平方根は$A$の特異値です。これは，$A=UΣV$のとき$A^TA=V^TΣ^TΣV$であることから分かります。同様に，$AA^T$ の 0 でない固有値の正の平方根も$A$の特異値です。
+\end{itemize}
+
+\section{一般逆行列}
+
+定義
+　$A$を$(n,m)$型行列とする線形方程式$Ax=y$が解$x$をもつような$y$に対して，$x=A^-y$がこの方程式の一つの解となる場合，$(m,n)$型行列$A^-$を$A$の一般逆行列という．
+ムーアペンローズ一般逆行列(Moore and Penrose generalized inverse)の定義
+\begin{enumerate}
+  \item $AA^-A = A$
+  \item $A^-AA^- = A^-$
+  \item $(A A^-)' = AA^-$
+  \item $(A^- A)' = A^-A$
+\end{enumerate}
+　
+
+\begin{thebibliography}{9}
+  \bibitem{koukousuugaku} 特異値分解の定義，性質，具体例, https://mathtrain.jp/svd
+  \bibitem{} 一般逆行列 https://www.slideshare.net/wosugi/ss-79624897
+  \bibitem{} 射影行列・一般逆行列・特異値分解 
+\end{thebibliography}
+
+\end{document}
