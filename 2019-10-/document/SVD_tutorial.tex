@@ -11,14 +11,13 @@
   \label{A=USV}
   A = U \Sigma V
 \end{equation}
-ここで$A$を$m×m$行列で，$U$は$m×m$直交行列，$\Sigma$は$m×n$行列，$V$は$n×n$直交行列である．
-$D$は対角行列であり，$d_i^*$を行列$A$の特異値とすると，
+ここで$A$を$m×n$行列で，$U$は$m×m$直交行列，$\Sigma$は$m×n$行列，$V$は$n×n$直交行列である．
+$\Sigma$は対角行列であり，$d_i^*$を行列$A$の特異値とすると，
 \begin{equation}
   \label{D_diag}
   D = diag(d_1^*, d_2^*, ..., d_n^*)
 \end{equation}
 とかける．
-特異値とは，
 
 特異値分解の性質
 \begin{itemize}
@@ -29,6 +28,74 @@ $D$は対角行列であり，$d_i^*$を行列$A$の特異値とすると，
   \item $A^TA$ の 0 でない固有値の正の平方根は$A$の特異値です。これは，$A=UΣV$のとき$A^TA=V^TΣ^TΣV$であることから分かります。同様に，$AA^T$ の 0 でない固有値の正の平方根も$A$の特異値です。
 \end{itemize}
 
+\subsection{特異値分解の例題}
+\begin{equation}
+  A=\left( \begin{array}{rrcr}
+  -2     & 1        & 1    \\
+  2      & 4        & 1    \\
+  1      & 1        & -2   \\
+  -2     & 1        & 1 
+  \end{array} \right)
+\end{equation}
+\begin{equation}
+  \label{}
+  A^T A=\left( \begin{array}{rrcr}
+  10      & -5       & -5    \\
+  -5      & 7        & -2    \\
+  -5      & -2       & 7     \\
+  \end{array} \right)
+\end{equation}
+\begin{equation}
+  \label{}
+  \phi(\lambda) = |\lambda I - A^T A| = (\lambda - 15)(\lambda - 9)\lambda = 0
+\end{equation}
+したがって，$A^T A$の固有値は，$\lambda_1=15$，$\lambda_2=9$，$\lambda_3=0$ となる
+よって行列$A$の特異値は，$\mu_1=\sqrt{15}$，$\mu_1=\sqrt{9}=3$となる．
+\begin{equation}
+  \label{}
+  \Delta_2 = \left( \begin{array}{rrcr}
+  \sqrt{15}      & 0    \\
+  0              & 3    \\
+  \end{array} \right)
+\end{equation}
+さらに，$A^T A V_{[2]}=V_{2}\Delta_2^2$，$U_{[2]}=A V_2 \Delta_2^{-1}$より
+\begin{equation}
+  \label{}
+  U_{[2]} = \left( \begin{array}{rrcr}
+  \sqrt{\frac{2}{5}} & 0  \\
+  -\sqrt{\frac{1}{10}} & \frac{\sqrt{2}}{2} \\
+  -\sqrt{\frac{1}{10}}  & -\frac{\sqrt{2}}{2} \\
+  \sqrt{\frac{2}{5}}   & 0  \\
+  \end{array} \right)，
+  V_{[2]} = \left( \begin{array}{rrcr}
+  -\frac{2}{\sqrt{6}} & 0 \\
+  \frac{1}{\sqrt{6}}  & -\frac{1}{\sqrt{2}} \\
+  \frac{1}{\sqrt{6}}  & \frac{1}{\sqrt{2}} \\
+  \end{array} \right)
+\end{equation}
+となるから，$A$ の特異値分解は
+\begin{equation}
+  \label{}
+  A = \sqrt{15} \left( \begin{array}{rrcr}
+  \sqrt{\frac{2}{5}}   \\
+  -\frac{1}{\sqrt{10}} \\
+  -\frac{1}{\sqrt{10}} \\
+  \sqrt{\frac{2}{5}}   \\
+  \end{array} \right)
+  \left( \begin{array}{rrcr}
+  -\frac{2}{\sqrt{6}}，\frac{1}{\sqrt{6}}，\frac{1}{\sqrt{6}}
+  \end{array} \right)
+  +3
+  \left( \begin{array}{rrcr}
+  0 \\
+  \frac{\sqrt{2}}{2} \\
+  -\frac{\sqrt{2}}{2} \\
+  0 \\
+  \end{array} \right)
+  \left( \begin{array}{rrcr}
+  0，-\frac{1}{\sqrt{2}}，\frac{1}{\sqrt{2}}\\
+  \end{array} \right)
+\end{equation}
 \section{一般逆行列}
 
 定義
@@ -40,7 +107,25 @@ $D$は対角行列であり，$d_i^*$を行列$A$の特異値とすると，
   \item $(A A^-)' = AA^-$
   \item $(A^- A)' = A^-A$
 \end{enumerate}
-　
+補助定理
+　$(n,m)$型行列$A$の特異値分解が式(\ref{A=USV})で与えられ，$S_1$，$S_2$，$S_3$がそれぞれ任意の$(r,n-r)$，$(m-r,r)$，$(m-r,n-r)$型行列のとき，$A$の一般逆行列は次式で与えられる．
+\begin{equation}
+  A^-=V \left( \begin{array}{rrcr}
+  \Delta_r^{-1} & S_1 \\
+  S_2 & S_3\\
+  \end{array} \right)
+  U^T
+\end{equation}
+特異値に関する性質　
+　特異値に関する補助定理1
+\begin{equation}
+  \max_x \frac{||Ax||}{||x||} = \mu_1(A)
+\end{equation}
+　特異値に関する補助定理2
+\begin{equation}
+  \max_{V_1'x=0} \frac{x'A'Ax}{x'x} = \lambda_{s+1}(A'A)
+  \max_{V_1'x=0} \frac{||Ax||}{||x||} = \mu_{s+1}(A)
+\end{equation}
 
 \begin{thebibliography}{9}
   \bibitem{koukousuugaku} 特異値分解の定義，性質，具体例, https://mathtrain.jp/svd
