@@ -127,6 +127,80 @@ $\Sigma$は対角行列であり，$d_i^*$を行列$A$の特異値とすると�
   \max_{V_1'x=0} \frac{||Ax||}{||x||} = \mu_{s+1}(A)
 \end{equation}
 
+実際の計算
+\begin{equation}
+  A^T A=\left( \begin{array}{rrcr}
+  10      & -5       & -5    \\
+  -5      & 7        & -2    \\
+  -5      & -2       & 7     \\
+  \end{array} \right)
+\end{equation}
+
+$A^T A$の固有値，正規化された固有ベクトルを計算する．
+\begin{equation}
+  \label{eigen_value}
+  \lambda = 3，9
+\end{equation}
+はじめに $\lambda_1 = 3$のとき
+\begin{equation}
+  \label{eigen_vector_lambda1}
+  u_1 = \left(\begin{array}{rrcr}
+  \frac{1}{\sqrt{2}} \\
+  \frac{1}{\sqrt{2}} \\
+  \end{array} \right)
+\end{equation}
+次に $\lambda_2 = 9$のとき
+\begin{equation}
+  \label{eigen_vector_lambda2}
+  u_2 = \left(\begin{array}{rrcr}
+  \frac{1}{\sqrt{2}} \\
+  -\frac{1}{\sqrt{2}} \\
+  \end{array} \right)
+\end{equation}
+固有値固有ベクトルを使って，次のベクトルを計算する．
+はじめに $\lambda_1 = 3$のとき
+\begin{equation}
+  \label{v_vector_1}
+  v_1 = \left(\begin{array}{rrcr}
+  -\frac{1}{\sqrt{6}} \\
+  -\frac{1}{\sqrt{6}} \\
+  \frac{2}{\sqrt{6}} \\
+  \end{array}\right)
+\end{equation}
+次に $\lambda_2 = 9$のとき
+\begin{equation}
+  \label{v_vector_2}
+  v_2 = \left(\begin{array}{rrcr}
+  \frac{1}{\sqrt{2}} \\
+  -\frac{1}{\sqrt{2}} \\
+  0 \\
+  \end{array}\right)
+\end{equation}
+それらの値を使って，特異値，ムーアペンローズ逆行列を計算できる．
+\begin{eqnarray}
+  \label{singular_value}
+  A &=& \sqrt{3} v_1 u_1^T + \sqrt{9} v_2 u_2^T \\
+    &=& \left(\begin{array}{rrcr}
+    \frac{3}{2}  & -\frac{3}{2} \\
+    -\frac{3}{2} & \frac{3}{2} \\
+    0 & 0 \\
+    \end{array}\right)
+    +
+    \left(\begin{array}{rrcr}
+    -\frac{1}{2}  & -\frac{1}{2} \\
+    -\frac{1}{2}  & -\frac{1}{2} \\
+    1 & 1 \\
+    \end{array}\right)
+\end{eqnarray}
+\begin{eqnarray}
+  \label{inverse_vector}
+  A^- &=& \frac{1}{\sqrt{3}} u_1 v_1^T + \frac{1}{\sqrt{9}} u_2 v_2^T \\
+      &=& \frac{1}{3} \left(\begin{array}{rrcr}
+       0 & -1 & 1 \\
+      -1 &  0 & 1 \\
+      \end{array}\right)
+\end{eqnarray}
+
 \begin{thebibliography}{9}
   \bibitem{koukousuugaku} 特異値分解の定義，性質，具体例, https://mathtrain.jp/svd
   \bibitem{} 一般逆行列 https://www.slideshare.net/wosugi/ss-79624897

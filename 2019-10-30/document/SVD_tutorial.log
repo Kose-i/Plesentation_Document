@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/Debian) (preloaded format=platex 2019.6.25)  29 OCT 2019 14:25
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/Debian) (preloaded format=platex 2019.6.25)  29 OCT 2019 19:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -108,11 +108,7 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
-(./SVD_tutorial.aux
-
-LaTeX Warning: Label `' multiply defined.
-
-)
+(./SVD_tutorial.aux)
 \openout1 = `SVD_tutorial.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
@@ -157,21 +153,21 @@ LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
 (Font)              scaled to size 11.53198pt on input line 31.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 11.53198pt on input line 31.
- [1
 
-] [2] [3]
-(./SVD_tutorial.aux)
+[1
 
-LaTeX Warning: There were multiply-defined labels.
+] [2] [3] [4] (./SVD_tutorial.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 1071 strings out of 494735
- 11934 string characters out of 6176126
+ 1078 strings out of 494735
+ 12047 string characters out of 6176126
  77998 words of memory out of 5000000
- 4629 multiletter control sequences out of 15000+600000
+ 4636 multiletter control sequences out of 15000+600000
  11344 words of font info for 52 fonts, out of 8000000 for 9000
  269 hyphenation exceptions out of 8191
- 27i,8n,21p,225b,197s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,12n,21p,225b,197s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on SVD_tutorial.dvi (3 pages, 9192 bytes).
+Output written on SVD_tutorial.dvi (4 pages, 12504 bytes).
