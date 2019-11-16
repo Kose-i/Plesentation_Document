@@ -1,0 +1,34 @@
+\documentclass[12pt]{jsarticle}
+
+\title{自己符号化器}
+
+\begin{document}
+
+自己符号化器とは，目標出力を伴わない，入力だけの訓練データを使った教師なし学習により，データをよく表す特徴を獲得することを目標とするニューラルネットです．ディープネットの事前学習，すなわちその重みのよい初期値を得る目的に利用される．
+
+入力$x$がそのまま入力層のユニットの出力となり，出力層からの出力$y$が
+\begin{equation}
+  y = f(Wx+b)
+\end{equation}
+と決定されるうようなものである．
+2層ネットワークは最初のそうでは上の式に従って入力$x$を$y$に変換し，次の層ではこうして得た$y$を入力$x$と同じ空間に戻す変換を行います．変換の結果を$\hat{x}$と書き，$y$から$\hat{x}$への変換を
+\begin{equation}
+  \hat{x} = \tilde{f}(\tilde{W}y+\tilde{b})
+\end{equation}
+と書くことにします．ここで$\tilde{f}$は追加した層の活性化関数ですが，一般に最初の層の活性化関数$f$とは異なっていて構わない．これら二つをまとめると\begin{equation}
+  \hat{x}(x) = \tilde{f}(\tilde{W}f(Wx+b) + \tilde{b})
+\end{equation}
+と書ける．
+最初の変換を符号化(encode)，二番目の変換を復号化(decode)と呼ぶ．
+
+入力層と中間層のユニット数をそれぞれ$D_x$と$D_y$とすると，$W$，$\tilde{W}$のサイズはそれぞれ$D_y×D_x$，$D_x×D_y$になる．重み共有では，次の関係を満たす．
+\begin{equation}
+  \tilde{W} = W^T
+\end{equation}
+
+
+\begin{thebibliography}{9}
+  \bibitem{DeepLearning} 岡谷貴之, 機械学習プロフェッショナル 深層学習,2015.
+\end{thebibliography}
+
+\end{document}
